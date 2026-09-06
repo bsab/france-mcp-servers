@@ -1,0 +1,3 @@
+# Dependencies for catalog maintenance scripts.
+# scripts/build_readme.py uses only the standard library.
+jsonschema>=4.0

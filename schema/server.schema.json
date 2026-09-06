@@ -1,0 +1,251 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bsab.github.io/france-mcp-servers/schema/server.schema.json",
+  "title": "French-context MCP server",
+  "description": "Schema for a catalog entry, corresponding to a file in servers/.",
+  "$ref": "#/$defs/server",
+  "unevaluatedProperties": false,
+  "$defs": {
+    "evidence": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "format": "uri",
+        "pattern": "^https://[^/\\s]+\\S*$"
+      }
+    },
+    "criterion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "evidence", "notes"],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["absent", "partial", "complete"]
+        },
+        "evidence": {"$ref": "#/$defs/evidence"},
+        "notes": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000,
+          "pattern": "\\S"
+        }
+      }
+    },
+    "quality": {
+      "description": "Static documentation review. The score is derived, not entered manually. An omitted field means unassessed.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["rubric_version", "reviewed_at", "status"],
+      "properties": {
+        "rubric_version": {"const": 1},
+        "reviewed_at": {
+          "type": "string",
+          "format": "date",
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+        },
+        "status": {"enum": ["assessed", "unassessed"]},
+        "criteria": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["installation", "configuration", "tools", "compatibility", "license", "limitations"],
+          "properties": {
+            "installation": {"$ref": "#/$defs/criterion"},
+            "configuration": {"$ref": "#/$defs/criterion"},
+            "tools": {"$ref": "#/$defs/criterion"},
+            "compatibility": {"$ref": "#/$defs/criterion"},
+            "license": {"$ref": "#/$defs/criterion"},
+            "limitations": {"$ref": "#/$defs/criterion"}
+          }
+        },
+        "reason": {"type": "string", "minLength": 1, "maxLength": 1000, "pattern": "\\S"},
+        "evidence": {"$ref": "#/$defs/evidence"}
+      },
+      "oneOf": [
+        {
+          "properties": {"status": {"const": "assessed"}},
+          "required": ["criteria"],
+          "not": {"anyOf": [{"required": ["reason"]}, {"required": ["evidence"]}]}
+        },
+        {
+          "properties": {"status": {"const": "unassessed"}},
+          "required": ["reason", "evidence"],
+          "not": {"required": ["criteria"]}
+        }
+      ]
+    },
+    "server": {
+      "title": "Catalog entry",
+      "description": "Fields shared by a file in servers/ and an entry in catalog.json.",
+      "type": "object",
+      "required": [
+        "name",
+        "author",
+        "language",
+        "license",
+        "stars",
+        "category",
+        "description",
+        "tags"
+      ],
+      "anyOf": [
+        {
+          "required": [
+            "repository_url"
+          ]
+        },
+        {
+          "required": [
+            "site_url"
+          ]
+        },
+        {
+          "required": [
+            "mcp_endpoint"
+          ]
+        }
+      ],
+      "properties": {
+        "name": {
+          "description": "Server name as displayed in the catalog.",
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 80
+        },
+        "repository_url": {
+          "description": "Public repository URL. Omitted only for remote servers without published source code.",
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https://"
+        },
+        "site_url": {
+          "description": "Project website or documentation.",
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https://"
+        },
+        "mcp_endpoint": {
+          "description": "Remote MCP endpoint for servers usable without a local installation.",
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https://"
+        },
+        "transport": {
+          "description": "MCP transport exposed by the server.",
+          "type": "string",
+          "enum": [
+            "stdio",
+            "sse",
+            "streamable-http"
+          ]
+        },
+        "author": {
+          "description": "User or organization publishing the server.",
+          "type": "string",
+          "minLength": 1
+        },
+        "language": {
+          "description": "Primary implementation language.",
+          "type": "string",
+          "enum": [
+            "Python",
+            "TypeScript",
+            "JavaScript",
+            "Go",
+            "Rust",
+            "Java",
+            "C#",
+            "Ruby",
+            "PHP"
+          ]
+        },
+        "license": {
+          "description": "SPDX identifier for the code license, or null if undeclared. Extend this list to support an additional license.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            null,
+            "MIT",
+            "Apache-2.0",
+            "AGPL-3.0",
+            "GPL-3.0",
+            "GPL-2.0",
+            "LGPL-3.0",
+            "BSD-2-Clause",
+            "BSD-3-Clause",
+            "MPL-2.0",
+            "EUPL-1.2",
+            "ISC",
+            "Unlicense",
+            "CC0-1.0"
+          ]
+        },
+        "stars": {
+          "description": "GitHub stars at the time of the last metadata update.",
+          "type": "integer",
+          "minimum": 0
+        },
+        "category": {
+          "description": "Catalog category. Must match the sections defined in scripts/build_readme.py.",
+          "type": "string",
+          "enum": [
+            "data-statistics",
+            "legal-tech",
+            "invoicing",
+            "government-public-finance",
+            "cybersecurity-compliance",
+            "design-other"
+          ]
+        },
+        "last_verified": {
+          "description": "Date when listing metadata was checked against public sources; not a runtime test or quality assessment.",
+          "type": "string",
+          "format": "date",
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+        },
+        "featured": {
+          "description": "Editorial selection: bold name in the README and a site badge. Does not affect the score or sorting.",
+          "type": "boolean"
+        },
+        "quality": {"$ref": "#/$defs/quality"},
+        "short_description": {
+          "description": "Compact description for README tables. Falls back to description if omitted.",
+          "type": "string",
+          "minLength": 10,
+          "maxLength": 120
+        },
+        "description": {
+          "description": "Server description, up to 200 characters.",
+          "type": "string",
+          "minLength": 20,
+          "maxLength": 200
+        },
+        "tags": {
+          "description": "Lowercase kebab-case keywords.",
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 8,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+          }
+        },
+        "tools": {
+          "description": "Names of exposed MCP tools, where documented.",
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_.-]+$"
+          }
+        }
+      }
+    }
+  }
+}

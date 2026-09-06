@@ -1,0 +1,21 @@
+{
+  "name": "INSEE Entreprises MCP",
+  "repository_url": "https://github.com/DavidScanu/mcp-insee-entreprises",
+  "site_url": "https://github.com/DavidScanu/mcp-insee-entreprises/blob/04bd82daa01bd7d26011ddb7b6b8dd2aed99732c/README.md",
+  "transport": "stdio",
+  "author": "DavidScanu",
+  "language": "Python",
+  "license": "MIT",
+  "stars": 1,
+  "category": "data-statistics",
+  "description": "Look up French businesses by SIREN or SIRET and search by location or activity using INSEE Sirene and the public business-search API.",
+  "tags": [
+    "insee",
+    "sirene",
+    "siren",
+    "siret",
+    "companies",
+    "open-data"
+  ],
+  "last_verified": "2026-09-06"
+}

@@ -1,0 +1,71 @@
+name: Suggest an MCP server
+description: Suggest a French-context MCP server for the catalog
+title: "[new server] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for contributing! You can also open a PR directly
+        by adding a JSON file in `servers/` — see
+        [CONTRIBUTING.md](https://github.com/bsab/france-mcp-servers/blob/main/CONTRIBUTING.md).
+
+  - type: input
+    id: name
+    attributes:
+      label: Server name
+      placeholder: French Open Data MCP Server
+    validations:
+      required: true
+
+  - type: input
+    id: repository_url
+    attributes:
+      label: Public project URL
+      description: Provide the repository, documentation website or MCP endpoint.
+      placeholder: https://github.com/owner/repo
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - data-statistics
+        - legal-tech
+        - invoicing
+        - government-public-finance
+        - cybersecurity-compliance
+        - design-other
+    validations:
+      required: true
+
+  - type: input
+    id: language
+    attributes:
+      label: Primary language
+      placeholder: Python
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Up to 200 characters, in English.
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: criteria
+    attributes:
+      label: Inclusion criteria
+      options:
+        - label: Implements the Model Context Protocol
+          required: true
+        - label: Is relevant to France (data, laws or services)
+          required: true
+        - label: Provides at least one public repository, documentation site or MCP endpoint
+          required: true
+        - label: Has usage documentation
+          required: true

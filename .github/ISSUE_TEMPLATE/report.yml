@@ -1,0 +1,32 @@
+name: Report a problem
+description: Broken links, incorrect or outdated information, or unmaintained servers
+title: "[problem] "
+body:
+  - type: input
+    id: server
+    attributes:
+      label: Affected server
+      description: Server name or file path in `servers/`.
+      placeholder: servers/example-server.json
+    validations:
+      required: true
+
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Problem type
+      options:
+        - Broken link
+        - Incorrect or outdated information
+        - Unmaintained or archived server
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: Describe the problem in English and provide the correct information if possible.
+    validations:
+      required: true

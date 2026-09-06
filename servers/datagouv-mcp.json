@@ -1,0 +1,21 @@
+{
+  "name": "data.gouv.fr MCP",
+  "repository_url": "https://github.com/datagouv/datagouv-mcp",
+  "site_url": "https://github.com/datagouv/datagouv-mcp/blob/c1e4e75d487ad3c4b3bb967ec0fd541eb28b32fe/README.md",
+  "mcp_endpoint": "https://mcp.data.gouv.fr/mcp",
+  "transport": "streamable-http",
+  "author": "datagouv",
+  "language": "Python",
+  "license": "MIT",
+  "stars": 1589,
+  "category": "data-statistics",
+  "description": "Official data.gouv.fr MCP server for discovering French datasets, querying tabular resources, and exploring public API metadata.",
+  "tags": [
+    "open-data",
+    "datagouv",
+    "datasets",
+    "public-apis",
+    "france"
+  ],
+  "last_verified": "2026-09-06"
+}

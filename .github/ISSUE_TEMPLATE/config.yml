@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Model Context Protocol documentation
+    url: https://modelcontextprotocol.io/
+    about: Official MCP specifications and guides.
+  - name: Contributing
+    url: https://github.com/bsab/france-mcp-servers/blob/main/CONTRIBUTING.md
+    about: Schema for servers/ files and instructions for adding a server.
