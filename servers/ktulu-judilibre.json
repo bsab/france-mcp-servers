@@ -1,0 +1,20 @@
+{
+  "name": "Judilibre MCP",
+  "repository_url": "https://github.com/Ktulu-Analog/mcp-judilibre",
+  "site_url": "https://github.com/Ktulu-Analog/mcp-judilibre/blob/6250bf2ae36e6349270997d9f8ad8ee1c281315b/README.md",
+  "transport": "streamable-http",
+  "author": "Ktulu-Analog",
+  "language": "Python",
+  "license": "AGPL-3.0",
+  "stars": 2,
+  "category": "legal-tech",
+  "description": "Community MCP server for searching, reading, and exporting French court decisions from the Cour de cassation's Judilibre API.",
+  "tags": [
+    "judilibre",
+    "case-law",
+    "courts",
+    "french-law",
+    "piste"
+  ],
+  "last_verified": "2026-09-06"
+}

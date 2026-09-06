@@ -1,0 +1,122 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bsab.github.io/france-mcp-servers/schema/catalog.schema.json",
+  "title": "France MCP Servers catalog",
+  "description": "Structure of catalog.json, the aggregated catalog published on GitHub Pages.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "generated_at", "source", "count", "categories", "servers"],
+  "$defs": {
+    "criterionStatus": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["label", "factor"],
+      "properties": {
+        "label": {"type": "string"},
+        "factor": {"enum": [0, 0.5, 1]}
+      }
+    }
+  },
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "format": "uri"
+    },
+    "version": {
+      "description": "Document structure version. Changes only for incompatible updates.",
+      "type": "integer",
+      "minimum": 1
+    },
+    "generated_at": {
+      "description": "Generation timestamp, in UTC.",
+      "type": "string",
+      "format": "date-time"
+    },
+    "source": {
+      "description": "Repository from which the catalog is generated.",
+      "type": "string",
+      "format": "uri"
+    },
+    "license": {
+      "description": "Catalog license, separate from the licenses of individual servers.",
+      "type": "string"
+    },
+    "quality_rubric": {
+      "description": "Static rubric shared by the score and interface; stars and featured status are excluded.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["version", "name", "criteria", "statuses"],
+      "properties": {
+        "version": {"const": 1},
+        "name": {"type": "string"},
+        "criteria": {
+          "type": "array",
+          "minItems": 6,
+          "maxItems": 6,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["id", "label", "weight"],
+            "properties": {
+              "id": {"enum": ["installation", "configuration", "tools", "compatibility", "license", "limitations"]},
+              "label": {"type": "string"},
+              "weight": {"type": "integer", "minimum": 0, "maximum": 100}
+            }
+          }
+        },
+        "statuses": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["absent", "partial", "complete"],
+          "properties": {
+            "absent": {"$ref": "#/$defs/criterionStatus"},
+            "partial": {"$ref": "#/$defs/criterionStatus"},
+            "complete": {"$ref": "#/$defs/criterionStatus"}
+          }
+        }
+      }
+    },
+    "count": {
+      "description": "Number of entries in servers.",
+      "type": "integer",
+      "minimum": 0
+    },
+    "categories": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "label", "emoji", "description", "count"],
+        "properties": {
+          "id": { "type": "string" },
+          "label": { "type": "string" },
+          "emoji": { "type": "string" },
+          "description": { "type": "string" },
+          "count": { "type": "integer", "minimum": 0 }
+        }
+      }
+    },
+    "servers": {
+      "type": "array",
+      "items": {
+        "$ref": "server.schema.json#/$defs/server",
+        "required": ["url"],
+        "properties": {
+          "readiness_score": {
+            "description": "Weighted sum of six documentation criteria, from 0 to 100; null if unassessed. Derived during generation, never assigned in servers/.",
+            "type": ["number", "null"],
+            "minimum": 0,
+            "maximum": 100,
+            "multipleOf": 0.5
+          },
+          "url": {
+            "description": "Canonical server link: repository_url, then site_url, then mcp_endpoint. Only present in the aggregated catalog, not in servers/ files.",
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "unevaluatedProperties": false
+      }
+    }
+  }
+}

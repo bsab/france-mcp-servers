@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  catalog:
+    name: Validate catalog and README
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: scripts/requirements.txt
+
+      - name: Install dependencies
+        run: python3 -m pip install -r scripts/requirements.txt
+
+      - name: Validate servers/ against the schema
+        run: python3 scripts/validate_servers.py
+
+      - name: Test rubric, schemas and assessment rendering
+        run: python3 -m unittest discover -s scripts -p 'test_*.py'
+
+      - name: Check that the README matches servers/
+        run: python3 scripts/build_readme.py --check
+
+      - name: Build and validate the published catalog
+        run: python3 scripts/build_catalog.py --output "$RUNNER_TEMP/site"

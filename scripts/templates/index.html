@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>France MCP Servers</title>
+<meta name="description" content="A curated catalog of Model Context Protocol servers for French data, laws and services.">
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #ffffff;
+    --fg: #1a1a1a;
+    --muted: #61656b;
+    --line: #d8dbe0;
+    --card: #f7f8fa;
+    --accent: #0b5fff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#0d1117; --fg:#e6edf3; --muted:#8b949e; --line:#272d36; --card:#161b22; --accent:#5b9dff; }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0 auto; padding: 2rem 1.25rem 4rem; max-width: 60rem;
+    background: var(--bg); color: var(--fg);
+    font: 16px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  h1 { margin: 0 0 .25rem; font-size: 1.75rem; }
+  .lede { margin: 0 0 1.5rem; color: var(--muted); }
+  a { color: var(--accent); }
+  .api {
+    background: var(--card); border: 1px solid var(--line); border-radius: 8px;
+    padding: .75rem 1rem; margin-bottom: 1.5rem; font-size: .9rem;
+  }
+  .api code { word-break: break-all; }
+  .controls { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1rem; }
+  input[type=search], select {
+    padding: .5rem .65rem; border: 1px solid var(--line); border-radius: 6px;
+    background: var(--bg); color: var(--fg); font: inherit; font-size: .95rem;
+  }
+  input[type=search] { flex: 1 1 16rem; }
+  #count { color: var(--muted); font-size: .875rem; margin-bottom: 1rem; }
+  ul { list-style: none; margin: 0; padding: 0; }
+  li {
+    border: 1px solid var(--line); border-radius: 8px;
+    padding: .9rem 1rem; margin-bottom: .6rem; background: var(--card);
+  }
+  .row { display: flex; align-items: baseline; gap: .5rem; flex-wrap: wrap; }
+  .name { font-weight: 600; }
+  .meta { color: var(--muted); font-size: .8125rem; }
+  .desc { margin: .35rem 0 .5rem; }
+  .tag {
+    display: inline-block; font-size: .75rem; color: var(--muted);
+    border: 1px solid var(--line); border-radius: 999px;
+    padding: .05rem .5rem; margin: 0 .25rem .25rem 0;
+  }
+  .quality { margin: .75rem 0; }
+  .score { font-weight: 600; }
+  details { margin-top: .5rem; }
+  summary { cursor: pointer; }
+  .criteria { padding-left: 1.25rem; }
+  .criteria li { border: 0; padding: .4rem 0; margin: 0; }
+  .criteria p { margin: .2rem 0; }
+  footer { margin-top: 2.5rem; color: var(--muted); font-size: .875rem; }
+</style>
+</head>
+<body>
+<h1>France MCP Servers 🇫🇷</h1>
+<p class="lede">A curated catalog of <a href="https://modelcontextprotocol.io/">Model Context Protocol</a> servers for French data, laws and services.</p>
+
+<div class="api">
+  JSON catalog: <a href="catalog.json"><code>catalog.json</code></a> —
+  schemas: <a href="schema/catalog.schema.json"><code>catalog</code></a>,
+  <a href="schema/server.schema.json"><code>server</code></a> —
+  source: <a href="https://github.com/bsab/france-mcp-servers">GitHub</a>
+</div>
+
+<div class="api">
+  <strong>🎯 Ready score: documented readiness, not certification.</strong>
+  This static score evaluates public instructions, not runtime behavior,
+  security or availability. Stars, remote access and editorial selections do not earn points.
+  <a href="https://github.com/bsab/france-mcp-servers/blob/main/CONTRIBUTING.md#static-documentation-assessment">Method and checklist</a>.
+  <details><summary>How the score is calculated</summary><p id="rubric"></p></details>
+</div>
+
+<div class="controls">
+  <input type="search" id="q" aria-label="Search servers" placeholder="Search by name, description or tag…" autocomplete="off">
+  <select id="category" aria-label="Category"><option value="">All categories</option></select>
+  <select id="language" aria-label="Language"><option value="">All languages</option></select>
+  <select id="assessment" aria-label="Documentation assessment">
+    <option value="">All assessments</option>
+    <option value="assessed">Assessed</option>
+    <option value="unassessed">Unassessed</option>
+  </select>
+  <select id="sort" aria-label="Sort order">
+    <option value="readiness">🎯 Ready score ↓</option>
+    <option value="name">Name A–Z</option>
+  </select>
+</div>
+
+<p id="count" aria-live="polite">Loading…</p>
+<ul id="list"></ul>
+
+<footer>Making French data and services easier to discover for AI assistants. An independent community catalog.</footer>
+
+<script>
+const el = (id) => document.getElementById(id);
+let servers = [];
+let rubric;
+
+const escapeHtml = (value) => String(value).replace(/[&<>"']/g, (c) => (
+  { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]
+));
+
+const formatScore = (score) => Number(score).toLocaleString('en-GB');
+
+function evidenceLinks(urls) {
+  return urls.map((url, i) => `<a href="${escapeHtml(url)}">Source ${i + 1}</a>`).join(' · ');
+}
+
+function renderQuality(server) {
+  const quality = server.quality;
+  const date = quality ? `Documentation review: ${escapeHtml(quality.reviewed_at)}` : '';
+  if (server.readiness_score == null) {
+    return `<div class="quality"><span class="score">Unassessed</span>
+      ${quality ? `<details><summary>Reason and sources</summary>
+        <p>${escapeHtml(quality.reason)}</p><p>${evidenceLinks(quality.evidence)}</p>
+        <p class="meta">${date}</p></details>` : ''}</div>`;
+  }
+  return `<div class="quality">
+    <span class="score">🎯 Ready score: ${formatScore(server.readiness_score)}/100</span>
+    <span class="meta"> · ${date} · rubric v${quality.rubric_version}</span>
+    <details><summary>Criteria, notes and sources</summary>
+      <ul class="criteria">${rubric.criteria.map((criterion) => {
+        const result = quality.criteria[criterion.id];
+        const status = rubric.statuses[result.status];
+        return `<li><strong>${escapeHtml(criterion.label)}</strong>:
+          ${escapeHtml(status.label)} — ${formatScore(criterion.weight * status.factor)}/${criterion.weight}
+          <p>${escapeHtml(result.notes)}</p><p>${evidenceLinks(result.evidence)}</p></li>`;
+      }).join('')}</ul>
+    </details></div>`;
+}
+
+function render() {
+  const query = el('q').value.trim().toLowerCase();
+  const category = el('category').value;
+  const language = el('language').value;
+  const assessment = el('assessment').value;
+
+  const matches = servers.filter((s) => {
+    if (category && s.category !== category) return false;
+    if (language && s.language !== language) return false;
+    if (assessment === 'assessed' && s.readiness_score == null) return false;
+    if (assessment === 'unassessed' && s.readiness_score != null) return false;
+    if (!query) return true;
+    const haystack = [s.name, s.description, s.author, ...(s.tags || [])].join(' ').toLowerCase();
+    return haystack.includes(query);
+  });
+  // The catalog is already sorted by score; do not turn null into zero.
+  if (el('sort').value === 'name') {
+    matches.sort((a, b) => a.name.localeCompare(b.name, 'en'));
+  }
+
+  el('count').textContent = `${matches.length} of ${servers.length} servers`;
+  el('list').innerHTML = matches.map((s) => `
+    <li>
+      <div class="row">
+        <a class="name" href="${escapeHtml(s.url)}">${escapeHtml(s.name)}</a>
+        <span class="meta">${escapeHtml(s.language)} · ★ ${s.stars} · ${escapeHtml(s.license || 'no declared license')}</span>
+      </div>
+      <p class="desc">${escapeHtml(s.description)}</p>
+      ${renderQuality(s)}
+      <div>
+        ${s.featured ? '<span class="tag">Editorial selection</span>' : ''}
+        ${s.mcp_endpoint ? `<a class="tag" href="${escapeHtml(s.mcp_endpoint)}">Remote${s.transport ? ` · ${escapeHtml(s.transport)}` : ''}</a>` : ''}
+        ${(s.tags || []).map((t) => `<span class="tag">${escapeHtml(t)}</span>`).join('')}
+      </div>
+    </li>`).join('');
+}
+
+function fillSelect(select, values) {
+  for (const value of values) {
+    const option = document.createElement('option');
+    option.value = value.id ?? value;
+    option.textContent = value.label ?? value;
+    select.append(option);
+  }
+}
+
+fetch('catalog.json')
+  .then((response) => {
+    if (!response.ok) throw new Error(response.statusText);
+    return response.json();
+  })
+  .then((catalog) => {
+    servers = catalog.servers;
+    rubric = catalog.quality_rubric;
+    el('rubric').textContent = rubric.criteria.map((c) => `${c.label}: ${c.weight} points`).join(' · ')
+      + '. Not documented = 0; partial = half weight; complete = full weight. Unassessed does not mean zero.';
+    fillSelect(el('category'), catalog.categories);
+    fillSelect(el('language'), [...new Set(servers.map((s) => s.language))].sort());
+    for (const id of ['q', 'category', 'language', 'assessment', 'sort']) el(id).addEventListener('input', render);
+    render();
+  })
+  .catch((error) => {
+    el('count').textContent = `Unable to load the catalog: ${error.message}`;
+  });
+</script>
+</body>
+</html>

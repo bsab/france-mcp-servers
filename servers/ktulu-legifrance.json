@@ -1,0 +1,20 @@
+{
+  "name": "Légifrance MCP",
+  "repository_url": "https://github.com/Ktulu-Analog/mcp-legifrance",
+  "site_url": "https://github.com/Ktulu-Analog/mcp-legifrance/blob/3c916e3c25c5e12960a79e97ad6a3f73d6249bd3/README.md",
+  "transport": "streamable-http",
+  "author": "Ktulu-Analog",
+  "language": "Python",
+  "license": "AGPL-3.0",
+  "stars": 3,
+  "category": "legal-tech",
+  "description": "Community MCP server for French legislation, legal codes, the Official Journal, collective agreements, and case law through Légifrance.",
+  "tags": [
+    "legifrance",
+    "french-law",
+    "legislation",
+    "case-law",
+    "piste"
+  ],
+  "last_verified": "2026-09-06"
+}

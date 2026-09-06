@@ -1,0 +1,20 @@
+{
+  "name": "Recherche d'Entreprises MCP",
+  "repository_url": "https://github.com/thomas-servais/mcp-recherche-entreprise",
+  "site_url": "https://github.com/thomas-servais/mcp-recherche-entreprise/blob/6e48631e7a0783d6df81082fb567a539cfe33eee/README.md",
+  "transport": "stdio",
+  "author": "thomas-servais",
+  "language": "TypeScript",
+  "license": "ISC",
+  "stars": 1,
+  "category": "data-statistics",
+  "description": "Search French companies and associations by name, location, activity, and certification using the government's public business-search API.",
+  "tags": [
+    "companies",
+    "associations",
+    "siren",
+    "business-search",
+    "open-data"
+  ],
+  "last_verified": "2026-09-06"
+}
