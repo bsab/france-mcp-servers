@@ -1,0 +1,74 @@
+{
+  "name": "Data Économie France MCP",
+  "repository_url": "https://github.com/pipeworx-io/mcp-data-economie-fr",
+  "site_url": "https://github.com/pipeworx-io/mcp-data-economie-fr/blob/5842a4665f5e74d81c3ed4c5021222a8769e3f3e/README.md",
+  "mcp_endpoint": "https://gateway.pipeworx.io/data-economie-fr/mcp",
+  "transport": "streamable-http",
+  "author": "pipeworx-io",
+  "language": "TypeScript",
+  "license": "MIT",
+  "stars": 0,
+  "category": "government-public-finance",
+  "description": "Search, inspect, and query data.economie.gouv.fr datasets covering French public finance, taxation, procurement, companies, and economic indicators.",
+  "tags": [
+    "data-economie-gouv-fr",
+    "public-finance",
+    "taxation",
+    "procurement",
+    "economic-indicators",
+    "opendatasoft"
+  ],
+  "last_verified": "2026-09-07",
+  "quality": {
+    "rubric_version": 1,
+    "reviewed_at": "2026-09-07",
+    "status": "assessed",
+    "criteria": {
+      "installation": {
+        "status": "complete",
+        "evidence": [
+          "https://github.com/pipeworx-io/mcp-data-economie-fr/blob/5842a4665f5e74d81c3ed4c5021222a8769e3f3e/README.md#L15-L27"
+        ],
+        "notes": "The README gives a ready-to-use hosted endpoint and complete JSON connection steps for Claude Desktop, Cursor, Windsurf, and compatible clients."
+      },
+      "configuration": {
+        "status": "partial",
+        "evidence": [
+          "https://github.com/pipeworx-io/mcp-data-economie-fr/blob/5842a4665f5e74d81c3ed4c5021222a8769e3f3e/README.md#L15-L27"
+        ],
+        "notes": "The hosted endpoint needs only a URL in the documented client configuration, but the README does not explicitly state whether authentication, credentials, or other prerequisites are unnecessary."
+      },
+      "tools": {
+        "status": "partial",
+        "evidence": [
+          "https://github.com/pipeworx-io/mcp-data-economie-fr/blob/5842a4665f5e74d81c3ed4c5021222a8769e3f3e/README.md#L7-L13",
+          "https://github.com/pipeworx-io/mcp-data-economie-fr/blob/5842a4665f5e74d81c3ed4c5021222a8769e3f3e/README.md#L63-L72"
+        ],
+        "notes": "The three pack tools and their query workflow are described, but the only natural-language example uses a generic your-question placeholder rather than a concrete data request."
+      },
+      "compatibility": {
+        "status": "complete",
+        "evidence": [
+          "https://github.com/pipeworx-io/mcp-data-economie-fr/blob/5842a4665f5e74d81c3ed4c5021222a8769e3f3e/README.md#L15-L27",
+          "https://github.com/pipeworx-io/mcp-data-economie-fr/blob/5842a4665f5e74d81c3ed4c5021222a8769e3f3e/server.json#L12-L17"
+        ],
+        "notes": "The server metadata explicitly declares Streamable HTTP, and the README supplies its endpoint in a complete configuration for several named MCP clients."
+      },
+      "license": {
+        "status": "complete",
+        "evidence": [
+          "https://github.com/pipeworx-io/mcp-data-economie-fr/blob/5842a4665f5e74d81c3ed4c5021222a8769e3f3e/README.md#L79-L81",
+          "https://github.com/pipeworx-io/mcp-data-economie-fr/blob/5842a4665f5e74d81c3ed4c5021222a8769e3f3e/LICENSE#L1-L21"
+        ],
+        "notes": "The README declares MIT and the repository contains accessible MIT terms applying to the project."
+      },
+      "limitations": {
+        "status": "complete",
+        "evidence": [
+          "https://github.com/pipeworx-io/mcp-data-economie-fr/blob/5842a4665f5e74d81c3ed4c5021222a8769e3f3e/README.md#L29-L44"
+        ],
+        "notes": "The README explains that roughly 30 shared gateway tools accompany the three pack tools, quantifies the context impact, and recommends one full-gateway connection when that is preferable."
+      }
+    }
+  }
+}

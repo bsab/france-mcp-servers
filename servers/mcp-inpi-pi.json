@@ -1,0 +1,75 @@
+{
+  "name": "INPI Industrial Property MCP",
+  "repository_url": "https://github.com/guix77/mcp-inpi-pi",
+  "site_url": "https://github.com/guix77/mcp-inpi-pi/blob/73b2c146cdb0f6e67afa0e4013c33521a5c89fbb/README.md",
+  "transport": "stdio",
+  "author": "guix77",
+  "language": "TypeScript",
+  "license": "MIT",
+  "stars": 0,
+  "category": "legal-tech",
+  "description": "Search French, European, and international trademarks through the INPI Industrial Property API, including trademark details and Nice classes.",
+  "tags": [
+    "inpi",
+    "trademarks",
+    "intellectual-property",
+    "nice-classification",
+    "legal-tech"
+  ],
+  "last_verified": "2026-09-07",
+  "quality": {
+    "rubric_version": 1,
+    "reviewed_at": "2026-09-07",
+    "status": "assessed",
+    "criteria": {
+      "installation": {
+        "status": "complete",
+        "evidence": [
+          "https://github.com/guix77/mcp-inpi-pi/blob/73b2c146cdb0f6e67afa0e4013c33521a5c89fbb/README.md#L15-L39",
+          "https://github.com/guix77/mcp-inpi-pi/blob/73b2c146cdb0f6e67afa0e4013c33521a5c89fbb/README.md#L41-L72"
+        ],
+        "notes": "The README gives complete npx-based Claude Desktop setup and startup details, plus optional Streamable HTTP and Docker commands with the resulting endpoint."
+      },
+      "configuration": {
+        "status": "complete",
+        "evidence": [
+          "https://github.com/guix77/mcp-inpi-pi/blob/73b2c146cdb0f6e67afa0e4013c33521a5c89fbb/README.md#L17-L39",
+          "https://github.com/guix77/mcp-inpi-pi/blob/73b2c146cdb0f6e67afa0e4013c33521a5c89fbb/README.md#L74-L82",
+          "https://github.com/guix77/mcp-inpi-pi/blob/73b2c146cdb0f6e67afa0e4013c33521a5c89fbb/package.json#L42-L57"
+        ],
+        "notes": "The documentation covers free INPI account activation, both required credentials, optional rate and port variables, dependencies, and the Node.js 22+ runtime requirement."
+      },
+      "tools": {
+        "status": "complete",
+        "evidence": [
+          "https://github.com/guix77/mcp-inpi-pi/blob/73b2c146cdb0f6e67afa0e4013c33521a5c89fbb/README.md#L7-L14",
+          "https://github.com/guix77/mcp-inpi-pi/blob/73b2c146cdb0f6e67afa0e4013c33521a5c89fbb/README.md#L84-L88"
+        ],
+        "notes": "The two trademark tools and Nice-class resource are described, followed by concrete natural-language prompts for a class-specific availability search and a trademark detail lookup."
+      },
+      "compatibility": {
+        "status": "complete",
+        "evidence": [
+          "https://github.com/guix77/mcp-inpi-pi/blob/73b2c146cdb0f6e67afa0e4013c33521a5c89fbb/README.md#L24-L53",
+          "https://github.com/guix77/mcp-inpi-pi/blob/73b2c146cdb0f6e67afa0e4013c33521a5c89fbb/README.md#L72-L72"
+        ],
+        "notes": "Claude Desktop receives a complete stdio configuration, while the alternative transport is explicitly identified as experimental Streamable HTTP with its command and endpoint."
+      },
+      "license": {
+        "status": "complete",
+        "evidence": [
+          "https://github.com/guix77/mcp-inpi-pi/blob/73b2c146cdb0f6e67afa0e4013c33521a5c89fbb/README.md#L102-L104",
+          "https://github.com/guix77/mcp-inpi-pi/blob/73b2c146cdb0f6e67afa0e4013c33521a5c89fbb/LICENSE#L1-L21"
+        ],
+        "notes": "The README identifies the MIT license and the repository contains accessible MIT terms applying to the project."
+      },
+      "limitations": {
+        "status": "complete",
+        "evidence": [
+          "https://github.com/guix77/mcp-inpi-pi/blob/73b2c146cdb0f6e67afa0e4013c33521a5c89fbb/README.md#L90-L100"
+        ],
+        "notes": "The README explicitly limits coverage to partial trademark support, excludes patents and designs, and warns that results are indicative rather than legal advice."
+      }
+    }
+  }
+}

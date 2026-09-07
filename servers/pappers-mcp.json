@@ -1,0 +1,73 @@
+{
+  "name": "Pappers MCP",
+  "repository_url": "https://github.com/stefanoamorelli/pappers-mcp",
+  "site_url": "https://github.com/stefanoamorelli/pappers-mcp/blob/5dcca5cebabc8c727c7dd35534c38958c624a9d4/README.md",
+  "transport": "streamable-http",
+  "author": "stefanoamorelli",
+  "language": "Go",
+  "license": "AGPL-3.0",
+  "stars": 1,
+  "category": "data-statistics",
+  "description": "Query French company legal data, financials, directors, beneficial owners, documents, compliance, and surveillance through Pappers API v2.",
+  "tags": [
+    "pappers",
+    "companies",
+    "financials",
+    "beneficial-owners",
+    "compliance",
+    "siren"
+  ],
+  "last_verified": "2026-09-07",
+  "quality": {
+    "rubric_version": 1,
+    "reviewed_at": "2026-09-07",
+    "status": "assessed",
+    "criteria": {
+      "installation": {
+        "status": "complete",
+        "evidence": [
+          "https://github.com/stefanoamorelli/pappers-mcp/blob/5dcca5cebabc8c727c7dd35534c38958c624a9d4/README.md#L21-L54"
+        ],
+        "notes": "The quick start provides a one-command Go startup, default port, Claude Code registration, manual client JSON, and a source-build alternative."
+      },
+      "configuration": {
+        "status": "complete",
+        "evidence": [
+          "https://github.com/stefanoamorelli/pappers-mcp/blob/5dcca5cebabc8c727c7dd35534c38958c624a9d4/README.md#L3-L19",
+          "https://github.com/stefanoamorelli/pappers-mcp/blob/5dcca5cebabc8c727c7dd35534c38958c624a9d4/README.md#L23-L29",
+          "https://github.com/stefanoamorelli/pappers-mcp/blob/5dcca5cebabc8c727c7dd35534c38958c624a9d4/README.md#L56-L89"
+        ],
+        "notes": "Go 1.24+, the required Pappers API key, optional port, and tool allowlist and blocklist variables are documented with precedence and examples."
+      },
+      "tools": {
+        "status": "partial",
+        "evidence": [
+          "https://github.com/stefanoamorelli/pappers-mcp/blob/5dcca5cebabc8c727c7dd35534c38958c624a9d4/README.md#L91-L116"
+        ],
+        "notes": "The README groups and describes all 24 API tools with links to their implementations, but it contains no concrete natural-language MCP usage prompt."
+      },
+      "compatibility": {
+        "status": "complete",
+        "evidence": [
+          "https://github.com/stefanoamorelli/pappers-mcp/blob/5dcca5cebabc8c727c7dd35534c38958c624a9d4/README.md#L3-L11",
+          "https://github.com/stefanoamorelli/pappers-mcp/blob/5dcca5cebabc8c727c7dd35534c38958c624a9d4/README.md#L29-L48"
+        ],
+        "notes": "Streamable HTTP is explicitly identified and the README gives both a Claude Code connection command and a complete manual HTTP client configuration."
+      },
+      "license": {
+        "status": "partial",
+        "evidence": [
+          "https://github.com/stefanoamorelli/pappers-mcp/blob/5dcca5cebabc8c727c7dd35534c38958c624a9d4/README.md#L132-L136"
+        ],
+        "notes": "The project declares AGPL-3.0, but the referenced LICENSE file does not exist at the reviewed commit, so complete terms applying to the server code are not accessible there."
+      },
+      "limitations": {
+        "status": "complete",
+        "evidence": [
+          "https://github.com/stefanoamorelli/pappers-mcp/blob/5dcca5cebabc8c727c7dd35534c38958c624a9d4/README.md#L16-L19"
+        ],
+        "notes": "The README clearly states that this is an unofficial integration requiring a valid Pappers key, compliance with upstream terms, and responsibility for API usage costs."
+      }
+    }
+  }
+}

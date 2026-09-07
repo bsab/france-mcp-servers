@@ -1,0 +1,77 @@
+{
+  "name": "Poligraph MCP",
+  "repository_url": "https://github.com/ironlam/poligraph-mcp",
+  "site_url": "https://github.com/ironlam/poligraph-mcp/blob/1568437e2052a11c46839244ba179aac744d1761/README.md",
+  "mcp_endpoint": "https://mcp.poligraph.fr/mcp",
+  "transport": "streamable-http",
+  "author": "ironlam",
+  "language": "TypeScript",
+  "license": "MIT",
+  "stars": 0,
+  "category": "government-public-finance",
+  "description": "Query documented French political data about politicians, mandates, parliamentary votes, parties, elections, public affairs, and fact-checks.",
+  "tags": [
+    "politics",
+    "parliament",
+    "politicians",
+    "elections",
+    "votes",
+    "fact-checking"
+  ],
+  "last_verified": "2026-09-07",
+  "quality": {
+    "rubric_version": 1,
+    "reviewed_at": "2026-09-07",
+    "status": "assessed",
+    "criteria": {
+      "installation": {
+        "status": "complete",
+        "evidence": [
+          "https://github.com/ironlam/poligraph-mcp/blob/1568437e2052a11c46839244ba179aac744d1761/README.md#L7-L42",
+          "https://github.com/ironlam/poligraph-mcp/blob/1568437e2052a11c46839244ba179aac744d1761/README.md#L83-L103"
+        ],
+        "notes": "Users can connect directly to the hosted endpoint with complete Claude Desktop or Claude Code steps; clone, dependency, build, and stdio client instructions are also provided for local use."
+      },
+      "configuration": {
+        "status": "complete",
+        "evidence": [
+          "https://github.com/ironlam/poligraph-mcp/blob/1568437e2052a11c46839244ba179aac744d1761/README.md#L23-L42",
+          "https://github.com/ironlam/poligraph-mcp/blob/1568437e2052a11c46839244ba179aac744d1761/README.md#L56-L66",
+          "https://github.com/ironlam/poligraph-mcp/blob/1568437e2052a11c46839244ba179aac744d1761/README.md#L216-L218"
+        ],
+        "notes": "Hosted use has a complete URL configuration and explicitly relies only on the public API without a service key; the optional exact-origin allowlist and localhost defaults are documented."
+      },
+      "tools": {
+        "status": "partial",
+        "evidence": [
+          "https://github.com/ironlam/poligraph-mcp/blob/1568437e2052a11c46839244ba179aac744d1761/README.md#L105-L169"
+        ],
+        "notes": "All 19 tools are organized and described across political, parliamentary, electoral, judicial, and fact-checking domains, but no concrete natural-language MCP prompt is included."
+      },
+      "compatibility": {
+        "status": "complete",
+        "evidence": [
+          "https://github.com/ironlam/poligraph-mcp/blob/1568437e2052a11c46839244ba179aac744d1761/README.md#L9-L42",
+          "https://github.com/ironlam/poligraph-mcp/blob/1568437e2052a11c46839244ba179aac744d1761/README.md#L197-L200"
+        ],
+        "notes": "Streamable HTTP and stdio transports are explicitly named, and the hosted transport has concrete configurations for Claude Desktop and Claude Code."
+      },
+      "license": {
+        "status": "partial",
+        "evidence": [
+          "https://github.com/ironlam/poligraph-mcp/blob/1568437e2052a11c46839244ba179aac744d1761/README.md#L241-L243",
+          "https://github.com/ironlam/poligraph-mcp/blob/1568437e2052a11c46839244ba179aac744d1761/package.json#L28-L30"
+        ],
+        "notes": "The README and package metadata declare MIT, but the reviewed repository contains no license file or linked terms applying that license to the server code."
+      },
+      "limitations": {
+        "status": "complete",
+        "evidence": [
+          "https://github.com/ironlam/poligraph-mcp/blob/1568437e2052a11c46839244ba179aac744d1761/README.md#L56-L66",
+          "https://github.com/ironlam/poligraph-mcp/blob/1568437e2052a11c46839244ba179aac744d1761/README.md#L216-L235"
+        ],
+        "notes": "The documentation explains strict Origin handling and its allowlist workaround, read-only public-API scope, judicial-role semantics, and fail-safe treatment of incomplete data."
+      }
+    }
+  }
+}

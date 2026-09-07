@@ -1,0 +1,76 @@
+{
+  "name": "IGN API Carto MCP",
+  "repository_url": "https://github.com/julienkalamon/ign-apicarto-mcp-server",
+  "site_url": "https://github.com/julienkalamon/ign-apicarto-mcp-server/blob/fa5d63c645eef3bef153bc410a386cc4225ca053/README.md",
+  "transport": "stdio",
+  "author": "julienkalamon",
+  "language": "TypeScript",
+  "license": "MIT",
+  "stars": 11,
+  "category": "geospatial",
+  "description": "Query IGN API Carto for French cadastre, administrative boundaries, agriculture, protected areas, urban planning, appellations, and WFS data.",
+  "tags": [
+    "ign",
+    "api-carto",
+    "cadastre",
+    "urban-planning",
+    "protected-areas",
+    "geospatial"
+  ],
+  "last_verified": "2026-09-07",
+  "quality": {
+    "rubric_version": 1,
+    "reviewed_at": "2026-09-07",
+    "status": "assessed",
+    "criteria": {
+      "installation": {
+        "status": "partial",
+        "evidence": [
+          "https://github.com/julienkalamon/ign-apicarto-mcp-server/blob/fa5d63c645eef3bef153bc410a386cc4225ca053/README.md#L56-L97",
+          "https://github.com/julienkalamon/ign-apicarto-mcp-server/blob/fa5d63c645eef3bef153bc410a386cc4225ca053/README.md#L117-L130"
+        ],
+        "notes": "Dependency, build, configuration, and client startup steps are present, but the documented clone URL still contains the invalid votre-utilisateur placeholder and must be corrected by the user."
+      },
+      "configuration": {
+        "status": "complete",
+        "evidence": [
+          "https://github.com/julienkalamon/ign-apicarto-mcp-server/blob/fa5d63c645eef3bef153bc410a386cc4225ca053/README.md#L56-L60",
+          "https://github.com/julienkalamon/ign-apicarto-mcp-server/blob/fa5d63c645eef3bef153bc410a386cc4225ca053/README.md#L77-L89",
+          "https://github.com/julienkalamon/ign-apicarto-mcp-server/blob/fa5d63c645eef3bef153bc410a386cc4225ca053/README.md#L349-L361"
+        ],
+        "notes": "Node.js 16+, npm, connectivity, transport and port defaults, configuration files, and the optional IGN key required only for appellation data are documented."
+      },
+      "tools": {
+        "status": "complete",
+        "evidence": [
+          "https://github.com/julienkalamon/ign-apicarto-mcp-server/blob/fa5d63c645eef3bef153bc410a386cc4225ca053/README.md#L40-L54",
+          "https://github.com/julienkalamon/ign-apicarto-mcp-server/blob/fa5d63c645eef3bef153bc410a386cc4225ca053/README.md#L414-L540"
+        ],
+        "notes": "Nine tools are described by capability and use case, followed by concrete prompts, expected outputs, and selected tool names for cadastre, urbanism, nature, agriculture, wine, and boundaries."
+      },
+      "compatibility": {
+        "status": "complete",
+        "evidence": [
+          "https://github.com/julienkalamon/ign-apicarto-mcp-server/blob/fa5d63c645eef3bef153bc410a386cc4225ca053/README.md#L99-L130",
+          "https://github.com/julienkalamon/ign-apicarto-mcp-server/blob/fa5d63c645eef3bef153bc410a386cc4225ca053/README.md#L302-L357"
+        ],
+        "notes": "The README explicitly identifies default stdio and optional HTTP modes and supplies complete Claude Desktop and generic client configurations with commands, arguments, and endpoint."
+      },
+      "license": {
+        "status": "complete",
+        "evidence": [
+          "https://github.com/julienkalamon/ign-apicarto-mcp-server/blob/fa5d63c645eef3bef153bc410a386cc4225ca053/README.md#L715-L721",
+          "https://github.com/julienkalamon/ign-apicarto-mcp-server/blob/fa5d63c645eef3bef153bc410a386cc4225ca053/LICENSE#L1-L21"
+        ],
+        "notes": "The README applies MIT to the project and links to accessible repository terms, while separately identifying the open license governing IGN data."
+      },
+      "limitations": {
+        "status": "complete",
+        "evidence": [
+          "https://github.com/julienkalamon/ign-apicarto-mcp-server/blob/fa5d63c645eef3bef153bc410a386cc4225ca053/README.md#L557-L574"
+        ],
+        "notes": "The documentation quantifies result limits, pagination, projection, timeout, output format, beta WFS status, update lag, geometry constraints, and RPG year coverage."
+      }
+    }
+  }
+}
