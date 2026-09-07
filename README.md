@@ -13,8 +13,8 @@
   <a href="https://github.com/bsab/france-mcp-servers/actions/workflows/link-check.yml"><img src="https://github.com/bsab/france-mcp-servers/actions/workflows/link-check.yml/badge.svg" alt="Link check"/></a>
   <a href="https://github.com/bsab/france-mcp-servers/actions/workflows/pages.yml"><img src="https://github.com/bsab/france-mcp-servers/actions/workflows/pages.yml/badge.svg" alt="GitHub Pages"/></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-green.svg" alt="MIT License"/></a>
-  <img src="https://img.shields.io/badge/MCP%20servers-11-blue.svg" alt="11 servers"/>
-  <img src="https://img.shields.io/badge/categories-6-orange.svg" alt="6 categories"/>
+  <img src="https://img.shields.io/badge/MCP%20servers-16-blue.svg" alt="16 servers"/>
+  <img src="https://img.shields.io/badge/categories-7-orange.svg" alt="7 categories"/>
 <!-- END:badges -->
 </p>
 
@@ -111,6 +111,14 @@ not a runtime test. No third-party MCP server or tool was executed.
     <td align="center">—</td>
   </tr>
   <tr>
+    <td><a href="https://github.com/stefanoamorelli/pappers-mcp">Pappers MCP</a></td>
+    <td align="right"><a href="servers/pappers-mcp.json" title="Documentation review: 2026-09-07; criteria and sources">85/100</a></td>
+    <td align="right">1</td>
+    <td>Go</td>
+    <td>Query French company legal data, financials, directors, beneficial owners, documents, compliance, and surveillance through Pappers API v2.</td>
+    <td align="center">—</td>
+  </tr>
+  <tr>
     <td><a href="https://github.com/InseeFrLab/McpDiffusion">McpDiffusion</a></td>
     <td align="right"><a href="servers/mcpdiffusion.json" title="Documentation review: 2026-09-07; criteria and sources">75/100</a></td>
     <td align="right">1</td>
@@ -151,6 +159,14 @@ not a runtime test. No third-party MCP server or tool was executed.
     <td>IGNfab prototype for querying authoritative French geospatial data, including geocoding, elevation, cadastre, and urban planning.</td>
     <td align="center"><a href="https://geollm.beta.ign.fr/geocontext/mcp" target="_blank" rel="noopener noreferrer" title="Open MCP endpoint: Geocontext"><kbd>Connect</kbd></a></td>
   </tr>
+  <tr>
+    <td><a href="https://github.com/julienkalamon/ign-apicarto-mcp-server">IGN API Carto MCP</a></td>
+    <td align="right"><a href="servers/ign-apicarto-mcp-server.json" title="Documentation review: 2026-09-07; criteria and sources">85/100</a></td>
+    <td align="right">11</td>
+    <td>TS</td>
+    <td>Query IGN API Carto for French cadastre, administrative boundaries, agriculture, protected areas, urban planning, appellations, and WFS data.</td>
+    <td align="center">—</td>
+  </tr>
   </tbody>
 </table>
 
@@ -169,6 +185,14 @@ not a runtime test. No third-party MCP server or tool was executed.
   </thead>
   <tbody>
   <tr>
+    <td><a href="https://github.com/guix77/mcp-inpi-pi">INPI Industrial Property MCP</a></td>
+    <td align="right"><a href="servers/mcp-inpi-pi.json" title="Documentation review: 2026-09-07; criteria and sources">100/100</a></td>
+    <td align="right">0</td>
+    <td>TS</td>
+    <td>Search French, European, and international trademarks through the INPI Industrial Property API, including trademark details and Nice classes.</td>
+    <td align="center">—</td>
+  </tr>
+  <tr>
     <td><a href="https://github.com/Ktulu-Analog/mcp-legifrance">Légifrance MCP</a></td>
     <td align="right"><a href="servers/ktulu-legifrance.json" title="Documentation review: 2026-09-07; criteria and sources">90/100</a></td>
     <td align="right">3</td>
@@ -183,6 +207,39 @@ not a runtime test. No third-party MCP server or tool was executed.
     <td>Python</td>
     <td>Community MCP server for searching, reading, and exporting French court decisions from the Cour de cassation&#x27;s Judilibre API.</td>
     <td align="center">—</td>
+  </tr>
+  </tbody>
+</table>
+
+### 🏛️ Government and Public Finance
+
+<table width="100%">
+  <thead>
+    <tr>
+      <th width="23%">Project</th>
+      <th width="13%" align="right">🎯 Ready score /100</th>
+      <th width="6%" align="right">⭐</th>
+      <th width="8%">Lang</th>
+      <th width="40%">Description</th>
+      <th width="10%">Link</th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td><a href="https://github.com/ironlam/poligraph-mcp">Poligraph MCP</a></td>
+    <td align="right"><a href="servers/poligraph-mcp.json" title="Documentation review: 2026-09-07; criteria and sources">85/100</a></td>
+    <td align="right">0</td>
+    <td>TS</td>
+    <td>Query documented French political data about politicians, mandates, parliamentary votes, parties, elections, public affairs, and fact-checks.</td>
+    <td align="center"><a href="https://mcp.poligraph.fr/mcp" target="_blank" rel="noopener noreferrer" title="Open MCP endpoint: Poligraph MCP"><kbd>Connect</kbd></a></td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/pipeworx-io/mcp-data-economie-fr">Data Économie France MCP</a></td>
+    <td align="right"><a href="servers/mcp-data-economie-fr.json" title="Documentation review: 2026-09-07; criteria and sources">80/100</a></td>
+    <td align="right">0</td>
+    <td>TS</td>
+    <td>Search, inspect, and query data.economie.gouv.fr datasets covering French public finance, taxation, procurement, companies, and economic indicators.</td>
+    <td align="center"><a href="https://gateway.pipeworx.io/data-economie-fr/mcp" target="_blank" rel="noopener noreferrer" title="Open MCP endpoint: Data Économie France MCP"><kbd>Connect</kbd></a></td>
   </tr>
   </tbody>
 </table>
