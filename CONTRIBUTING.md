@@ -51,6 +51,7 @@ environment. After `source .venv/bin/activate`, run:
 | `python3 scripts/build_readme.py` | Regenerate README badges and tables |
 | `python3 scripts/build_readme.py --check` | Check for drift without rewriting files; used in CI |
 | `python3 scripts/build_catalog.py` | Generate `site/`, including `catalog.json`, both schemas and the browse page |
+| `python3 scripts/check_mcp_endpoints.py check` | Verify remote endpoints with an MCP `initialize` request; used by the scheduled link check |
 | `python3 -m unittest discover -s scripts -p 'test_*.py'` | Test the static rubric, schemas and public rendering without querying external servers |
 
 ### Local preview and deployment
