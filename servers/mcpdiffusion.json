@@ -1,0 +1,76 @@
+{
+  "name": "McpDiffusion",
+  "repository_url": "https://github.com/InseeFrLab/McpDiffusion",
+  "site_url": "https://github.com/InseeFrLab/McpDiffusion/blob/5c0139175b5d06f1f83c1025160bf3c38ff4e9f6/README.md",
+  "mcp_endpoint": "https://mcpdiffusion.lab.sspcloud.fr/mcp",
+  "transport": "streamable-http",
+  "author": "InseeFrLab",
+  "language": "Python",
+  "license": "Apache-2.0",
+  "stars": 1,
+  "category": "data-statistics",
+  "description": "Beta server unifying INSEE publications, MELODI datasets, and RMES semantic metadata behind a remote MCP endpoint.",
+  "tags": [
+    "insee",
+    "statistics",
+    "melodi",
+    "rmes",
+    "public-data",
+    "sparql"
+  ],
+  "last_verified": "2026-09-07",
+  "quality": {
+    "rubric_version": 1,
+    "reviewed_at": "2026-09-07",
+    "status": "assessed",
+    "criteria": {
+      "installation": {
+        "status": "partial",
+        "evidence": [
+          "https://github.com/InseeFrLab/McpDiffusion/blob/5c0139175b5d06f1f83c1025160bf3c38ff4e9f6/README.md#L123-L180",
+          "https://github.com/InseeFrLab/McpDiffusion/blob/5c0139175b5d06f1f83c1025160bf3c38ff4e9f6/pyproject.toml#L1-L25",
+          "https://github.com/InseeFrLab/McpDiffusion/blob/5c0139175b5d06f1f83c1025160bf3c38ff4e9f6/Dockerfile#L11-L34"
+        ],
+        "notes": "Clone, dependency, startup, and Docker commands are presented, but the local commands reference files absent from the pinned layout and the documented directory differs from the repository name. The hosted endpoint is not used in a client connection example."
+      },
+      "configuration": {
+        "status": "partial",
+        "evidence": [
+          "https://github.com/InseeFrLab/McpDiffusion/blob/5c0139175b5d06f1f83c1025160bf3c38ff4e9f6/README.md#L114-L162",
+          "https://github.com/InseeFrLab/McpDiffusion/blob/5c0139175b5d06f1f83c1025160bf3c38ff4e9f6/src/mcpdiffusion/.env.example#L1-L18"
+        ],
+        "notes": "Python 3.12, Elasticsearch, network prerequisites, and principal host and port variables are documented. However, the README and environment template disagree about Elasticsearch variables, several template options are unexplained, and credentials are not addressed explicitly."
+      },
+      "tools": {
+        "status": "complete",
+        "evidence": [
+          "https://github.com/InseeFrLab/McpDiffusion/blob/5c0139175b5d06f1f83c1025160bf3c38ff4e9f6/README.md#L85-L112",
+          "https://github.com/InseeFrLab/McpDiffusion/blob/5c0139175b5d06f1f83c1025160bf3c38ff4e9f6/SKILL.md#L112-L153"
+        ],
+        "notes": "The README describes every exposed tool, while the linked usage guide supplies concrete user prompts, ordered MCP tool workflows, arguments, and representative results."
+      },
+      "compatibility": {
+        "status": "complete",
+        "evidence": [
+          "https://github.com/InseeFrLab/McpDiffusion/blob/5c0139175b5d06f1f83c1025160bf3c38ff4e9f6/README.md#L189-L248"
+        ],
+        "notes": "MCP over HTTP is stated explicitly, with complete connection examples for named clients including Claude Code and Claude Desktop."
+      },
+      "license": {
+        "status": "complete",
+        "evidence": [
+          "https://github.com/InseeFrLab/McpDiffusion/blob/5c0139175b5d06f1f83c1025160bf3c38ff4e9f6/README.md#L306-L308",
+          "https://github.com/InseeFrLab/McpDiffusion/blob/5c0139175b5d06f1f83c1025160bf3c38ff4e9f6/LICENSE#L1-L35"
+        ],
+        "notes": "The README applies Apache License 2.0 to the project and links to an accessible copy of its terms in the repository."
+      },
+      "limitations": {
+        "status": "complete",
+        "evidence": [
+          "https://github.com/InseeFrLab/McpDiffusion/blob/5c0139175b5d06f1f83c1025160bf3c38ff4e9f6/README.md#L278-L293"
+        ],
+        "notes": "Most tools require a private Elasticsearch index, only RMES_run_sparql works without it, raw SPARQL must be well formed, and deployment requires hardening permissive host and proxy settings."
+      }
+    }
+  }
+}

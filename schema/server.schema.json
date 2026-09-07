@@ -194,9 +194,13 @@
           "type": "string",
           "enum": [
             "data-statistics",
+            "geospatial",
             "legal-tech",
-            "invoicing",
             "government-public-finance",
+            "public-services",
+            "employment",
+            "transport",
+            "invoicing",
             "cybersecurity-compliance",
             "design-other"
           ]

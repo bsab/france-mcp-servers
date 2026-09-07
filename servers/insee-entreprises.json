@@ -17,5 +17,61 @@
     "companies",
     "open-data"
   ],
-  "last_verified": "2026-09-06"
+  "last_verified": "2026-09-06",
+  "quality": {
+    "rubric_version": 1,
+    "reviewed_at": "2026-09-07",
+    "status": "assessed",
+    "criteria": {
+      "installation": {
+        "status": "complete",
+        "evidence": [
+          "https://github.com/DavidScanu/mcp-insee-entreprises/blob/04bd82daa01bd7d26011ddb7b6b8dd2aed99732c/README.md#L94-L145",
+          "https://github.com/DavidScanu/mcp-insee-entreprises/blob/04bd82daa01bd7d26011ddb7b6b8dd2aed99732c/README.md#L147-L187"
+        ],
+        "notes": "The README provides the repository clone, uv dependency installation, environment-file setup, Claude Code registration, verification command, and an alternative manual MCP configuration."
+      },
+      "configuration": {
+        "status": "complete",
+        "evidence": [
+          "https://github.com/DavidScanu/mcp-insee-entreprises/blob/04bd82daa01bd7d26011ddb7b6b8dd2aed99732c/README.md#L33-L40",
+          "https://github.com/DavidScanu/mcp-insee-entreprises/blob/04bd82daa01bd7d26011ddb7b6b8dd2aed99732c/README.md#L107-L127",
+          "https://github.com/DavidScanu/mcp-insee-entreprises/blob/04bd82daa01bd7d26011ddb7b6b8dd2aed99732c/.env.example#L1-L3"
+        ],
+        "notes": "Python 3.12+, uv, auxiliary command-line dependencies, INSEE key acquisition, the required INSEE_API_KEY variable, and the absolute installation-path placeholder are all documented."
+      },
+      "tools": {
+        "status": "complete",
+        "evidence": [
+          "https://github.com/DavidScanu/mcp-insee-entreprises/blob/04bd82daa01bd7d26011ddb7b6b8dd2aed99732c/README.md#L11-L31",
+          "https://github.com/DavidScanu/mcp-insee-entreprises/blob/04bd82daa01bd7d26011ddb7b6b8dd2aed99732c/README.md#L278-L318"
+        ],
+        "notes": "All three tools are described with their data sources, filters, and returned information, followed by concrete natural-language prompts for SIREN, name, director, activity, geographic, and advanced searches."
+      },
+      "compatibility": {
+        "status": "complete",
+        "evidence": [
+          "https://github.com/DavidScanu/mcp-insee-entreprises/blob/04bd82daa01bd7d26011ddb7b6b8dd2aed99732c/README.md#L121-L145",
+          "https://github.com/DavidScanu/mcp-insee-entreprises/blob/04bd82daa01bd7d26011ddb7b6b8dd2aed99732c/README.md#L147-L187"
+        ],
+        "notes": "The Claude Code registration command explicitly specifies stdio transport, and both Claude Code and Claude Desktop receive concrete command or JSON configuration examples."
+      },
+      "license": {
+        "status": "complete",
+        "evidence": [
+          "https://github.com/DavidScanu/mcp-insee-entreprises/blob/04bd82daa01bd7d26011ddb7b6b8dd2aed99732c/README.md#L3-L7",
+          "https://opensource.org/licenses/MIT"
+        ],
+        "notes": "The project displays an MIT license badge whose link resolves to the complete MIT license terms. Although no repository LICENSE file exists at this commit, the project-specific badge makes the license explicit and the linked terms are accessible."
+      },
+      "limitations": {
+        "status": "complete",
+        "evidence": [
+          "https://github.com/DavidScanu/mcp-insee-entreprises/blob/04bd82daa01bd7d26011ddb7b6b8dd2aed99732c/README.md#L451-L460",
+          "https://github.com/DavidScanu/mcp-insee-entreprises/blob/04bd82daa01bd7d26011ddb7b6b8dd2aed99732c/README.md#L514-L531"
+        ],
+        "notes": "Concrete API limits are documented: 30 requests per minute for the INSEE integration environment and seven requests per second for Recherche d'Entreprises. The README also lists several unavailable data relationships and records."
+      }
+    }
+  }
 }

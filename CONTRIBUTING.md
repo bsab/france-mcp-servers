@@ -35,9 +35,10 @@ python3 -m venv .venv
   Do not infer an open-source license from a public repository alone.
 - Omit `quality` for a server that has not received a rubric assessment.
 
-The available categories are `data-statistics`, `legal-tech`, `invoicing`,
-`government-public-finance`, `cybersecurity-compliance` and `design-other`.
-They must stay aligned across the schema, README generator and new-server issue form.
+The available categories are `data-statistics`, `geospatial`, `legal-tech`,
+`government-public-finance`, `public-services`, `employment`, `transport`, `invoicing`,
+`cybersecurity-compliance` and `design-other`. They must stay aligned across the schema,
+README generator and new-server issue form.
 
 ## Maintenance commands
 

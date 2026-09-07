@@ -16,5 +16,58 @@
     "business-search",
     "open-data"
   ],
-  "last_verified": "2026-09-06"
+  "last_verified": "2026-09-06",
+  "quality": {
+    "rubric_version": 1,
+    "reviewed_at": "2026-09-07",
+    "status": "assessed",
+    "criteria": {
+      "installation": {
+        "status": "partial",
+        "evidence": [
+          "https://github.com/thomas-servais/mcp-recherche-entreprise/blob/6e48631e7a0783d6df81082fb567a539cfe33eee/README.md#L12-L51"
+        ],
+        "notes": "Dependency, build, development, and production commands are supplied, but the clone command leaves the repository URL unresolved and the documented directory name does not match the canonical repository name."
+      },
+      "configuration": {
+        "status": "complete",
+        "evidence": [
+          "https://github.com/thomas-servais/mcp-recherche-entreprise/blob/6e48631e7a0783d6df81082fb567a539cfe33eee/README.md#L12-L16",
+          "https://github.com/thomas-servais/mcp-recherche-entreprise/blob/6e48631e7a0783d6df81082fb567a539cfe33eee/README.md#L53-L59",
+          "https://github.com/thomas-servais/mcp-recherche-entreprise/blob/6e48631e7a0783d6df81082fb567a539cfe33eee/env.example#L1-L11"
+        ],
+        "notes": "Node.js 18+ and npm or yarn are identified, and API_RATE_LIMIT and API_TIMEOUT are explicitly optional. The environment example supplies their values and the API base URL, so no required credential is left unexplained."
+      },
+      "tools": {
+        "status": "partial",
+        "evidence": [
+          "https://github.com/thomas-servais/mcp-recherche-entreprise/blob/6e48631e7a0783d6df81082fb567a539cfe33eee/README.md#L60-L130"
+        ],
+        "notes": "The search_companies capability, parameters, and several direct function-call examples are documented, but no natural-language MCP prompt is provided as required for complete status."
+      },
+      "compatibility": {
+        "status": "partial",
+        "evidence": [
+          "https://github.com/thomas-servais/mcp-recherche-entreprise/blob/6e48631e7a0783d6df81082fb567a539cfe33eee/README.md#L77-L93",
+          "https://github.com/thomas-servais/mcp-recherche-entreprise/blob/6e48631e7a0783d6df81082fb567a539cfe33eee/README.md#L132-L142"
+        ],
+        "notes": "An MCP client configuration using Node.js and the built server file is shown, and Cursor is named in a test command, but the transport is never explicitly stated; stdio cannot be inferred from command syntax."
+      },
+      "license": {
+        "status": "partial",
+        "evidence": [
+          "https://github.com/thomas-servais/mcp-recherche-entreprise/blob/6e48631e7a0783d6df81082fb567a539cfe33eee/README.md#L154-L156",
+          "https://github.com/thomas-servais/mcp-recherche-entreprise/blob/6e48631e7a0783d6df81082fb567a539cfe33eee/package.json#L20-L25"
+        ],
+        "notes": "The README and package metadata identify ISC, but this commit contains no LICENSE file and the README does not link to accessible license terms."
+      },
+      "limitations": {
+        "status": "absent",
+        "evidence": [
+          "https://github.com/thomas-servais/mcp-recherche-entreprise/blob/6e48631e7a0783d6df81082fb567a539cfe33eee/README.md#L132-L162"
+        ],
+        "notes": "No operational limitation, unsupported operation, data-coverage restriction, rate limit, or generic maturity warning is documented; the README proceeds from testing and contribution guidance directly to the license and links."
+      }
+    }
+  }
 }

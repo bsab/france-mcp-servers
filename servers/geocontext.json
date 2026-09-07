@@ -1,0 +1,75 @@
+{
+  "name": "Geocontext",
+  "repository_url": "https://github.com/ignfab/geocontext",
+  "site_url": "https://github.com/ignfab/geocontext/blob/2ef83e6ec0f823b524a6394f59a5db25734d2c0c/README.md",
+  "mcp_endpoint": "https://geollm.beta.ign.fr/geocontext/mcp",
+  "transport": "streamable-http",
+  "author": "ignfab",
+  "language": "TypeScript",
+  "license": "MIT",
+  "stars": 26,
+  "category": "geospatial",
+  "description": "IGNfab prototype for querying authoritative French geospatial data, including geocoding, elevation, cadastre, and urban planning.",
+  "tags": [
+    "ign",
+    "geospatial",
+    "geocoding",
+    "cadastre",
+    "urban-planning",
+    "geoplateforme"
+  ],
+  "last_verified": "2026-09-07",
+  "quality": {
+    "rubric_version": 1,
+    "reviewed_at": "2026-09-07",
+    "status": "assessed",
+    "criteria": {
+      "installation": {
+        "status": "complete",
+        "evidence": [
+          "https://github.com/ignfab/geocontext/blob/2ef83e6ec0f823b524a6394f59a5db25734d2c0c/README.md#L78-L116"
+        ],
+        "notes": "The documentation provides a ready-to-use remote HTTP URL and complete MCP configuration, plus the Node.js requirement, an npx startup command, and a complete Cursor configuration for local use."
+      },
+      "configuration": {
+        "status": "complete",
+        "evidence": [
+          "https://github.com/ignfab/geocontext/blob/2ef83e6ec0f823b524a6394f59a5db25734d2c0c/README.md#L99-L116",
+          "https://github.com/ignfab/geocontext/blob/2ef83e6ec0f823b524a6394f59a5db25734d2c0c/docs/config.md#L3-L31"
+        ],
+        "notes": "Supported Node.js versions and npx are specified, ordinary local use explicitly requires no configuration, and the advanced guide documents transports, defaults, timeouts, rate limits, logging, proxy requirements, and the conditional proxy secret."
+      },
+      "tools": {
+        "status": "complete",
+        "evidence": [
+          "https://github.com/ignfab/geocontext/blob/2ef83e6ec0f823b524a6394f59a5db25734d2c0c/README.md#L23-L75",
+          "https://github.com/ignfab/geocontext/blob/2ef83e6ec0f823b524a6394f59a5db25734d2c0c/README.md#L180-L198"
+        ],
+        "notes": "The tool table describes each MCP capability, and the worked demonstration includes a concrete natural-language prompt followed by named tool calls, arguments, and the resulting answer."
+      },
+      "compatibility": {
+        "status": "complete",
+        "evidence": [
+          "https://github.com/ignfab/geocontext/blob/2ef83e6ec0f823b524a6394f59a5db25734d2c0c/README.md#L80-L116",
+          "https://github.com/ignfab/geocontext/blob/2ef83e6ec0f823b524a6394f59a5db25734d2c0c/docs/config.md#L8-L16"
+        ],
+        "notes": "HTTP and stdio transports are explicitly identified. The README supplies a remote HTTP configuration and a named Cursor local configuration with exact command and arguments."
+      },
+      "license": {
+        "status": "complete",
+        "evidence": [
+          "https://github.com/ignfab/geocontext/blob/2ef83e6ec0f823b524a6394f59a5db25734d2c0c/README.md#L281-L283",
+          "https://github.com/ignfab/geocontext/blob/2ef83e6ec0f823b524a6394f59a5db25734d2c0c/LICENSE#L1-L20"
+        ],
+        "notes": "The project identifies the MIT license and links to accessible repository terms that expressly apply to the software and associated documentation."
+      },
+      "limitations": {
+        "status": "complete",
+        "evidence": [
+          "https://github.com/ignfab/geocontext/blob/2ef83e6ec0f823b524a6394f59a5db25734d2c0c/docs/config.md#L34-L50"
+        ],
+        "notes": "Layer tools fail without a reachable geodata proxy and matching secret and base URL; the guide gives non-layer tools as a workaround and warns that secret rotation invalidates previously generated map URLs."
+      }
+    }
+  }
+}

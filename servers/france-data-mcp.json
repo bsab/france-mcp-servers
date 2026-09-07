@@ -1,0 +1,78 @@
+{
+  "name": "france-data-mcp",
+  "repository_url": "https://github.com/cturkieh/france-data-mcp",
+  "site_url": "https://github.com/cturkieh/france-data-mcp/blob/628916c6ec619a2e3e6bdc632ea2841ae878d693/README.md",
+  "mcp_endpoint": "https://france-data-mcp.vercel.app/mcp",
+  "transport": "streamable-http",
+  "author": "cturkieh",
+  "language": "TypeScript",
+  "license": "MIT",
+  "stars": 3,
+  "category": "data-statistics",
+  "description": "Cross-reference 13 French public datasets covering healthcare, demographics, businesses, geography, planning, and real estate.",
+  "tags": [
+    "public-data",
+    "healthcare",
+    "demographics",
+    "companies",
+    "geospatial",
+    "real-estate"
+  ],
+  "last_verified": "2026-09-07",
+  "quality": {
+    "rubric_version": 1,
+    "reviewed_at": "2026-09-07",
+    "status": "assessed",
+    "criteria": {
+      "installation": {
+        "status": "complete",
+        "evidence": [
+          "https://github.com/cturkieh/france-data-mcp/blob/628916c6ec619a2e3e6bdc632ea2841ae878d693/docs/installation-claude.md#L9-L29",
+          "https://github.com/cturkieh/france-data-mcp/blob/628916c6ec619a2e3e6bdc632ea2841ae878d693/README.md#L15-L42"
+        ],
+        "notes": "The guide gives complete numbered remote-connector steps, including endpoint, authentication selection, save and activation; the README also provides ready-to-paste Claude Code, Cursor, and npm-wrapper configurations."
+      },
+      "configuration": {
+        "status": "complete",
+        "evidence": [
+          "https://github.com/cturkieh/france-data-mcp/blob/628916c6ec619a2e3e6bdc632ea2841ae878d693/docs/installation-claude.md#L9-L29",
+          "https://github.com/cturkieh/france-data-mcp/blob/628916c6ec619a2e3e6bdc632ea2841ae878d693/docs/installation-claude.md#L69-L103",
+          "https://github.com/cturkieh/france-data-mcp/blob/628916c6ec619a2e3e6bdc632ea2841ae878d693/package.json#L95-L115"
+        ],
+        "notes": "For remote use, the guide names the Claude subscription prerequisite and explicitly says authentication is None. Self-hosting documentation supplies pnpm and Vercel commands, runtime versions, required variables, and optional service credentials."
+      },
+      "tools": {
+        "status": "complete",
+        "evidence": [
+          "https://github.com/cturkieh/france-data-mcp/blob/628916c6ec619a2e3e6bdc632ea2841ae878d693/README.md#L67-L117",
+          "https://github.com/cturkieh/france-data-mcp/blob/628916c6ec619a2e3e6bdc632ea2841ae878d693/docs/installation-claude.md#L27-L29"
+        ],
+        "notes": "The README names and describes the 36 tools by domain, including parameters and output purposes, while the installation guide supplies a concrete natural-language prompt."
+      },
+      "compatibility": {
+        "status": "complete",
+        "evidence": [
+          "https://github.com/cturkieh/france-data-mcp/blob/628916c6ec619a2e3e6bdc632ea2841ae878d693/server.json#L10-L24",
+          "https://github.com/cturkieh/france-data-mcp/blob/628916c6ec619a2e3e6bdc632ea2841ae878d693/docs/installation-claude.md#L33-L65"
+        ],
+        "notes": "The MCP manifest declares stdio for the npm package and Streamable HTTP for the remote endpoint; the guide provides complete connection configurations for Claude Code and Cursor."
+      },
+      "license": {
+        "status": "complete",
+        "evidence": [
+          "https://github.com/cturkieh/france-data-mcp/blob/628916c6ec619a2e3e6bdc632ea2841ae878d693/LICENSE#L1-L21",
+          "https://github.com/cturkieh/france-data-mcp/blob/628916c6ec619a2e3e6bdc632ea2841ae878d693/README.md#L148-L159"
+        ],
+        "notes": "The repository contains complete MIT license terms applying to the software, and the README separately identifies attribution requirements for the underlying datasets."
+      },
+      "limitations": {
+        "status": "complete",
+        "evidence": [
+          "https://github.com/cturkieh/france-data-mcp/blob/628916c6ec619a2e3e6bdc632ea2841ae878d693/README.md#L121-L128",
+          "https://github.com/cturkieh/france-data-mcp/blob/628916c6ec619a2e3e6bdc632ea2841ae878d693/docs/installation-claude.md#L127-L137"
+        ],
+        "notes": "The public endpoint's 60-requests-per-minute-per-IP limit, resulting JSON-RPC error, and retry delay are documented, with workarounds to throttle, self-host, or request a dedicated quota."
+      }
+    }
+  }
+}

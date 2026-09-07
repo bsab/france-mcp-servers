@@ -37,11 +37,15 @@ class Category(NamedTuple):
 # Keep emoji separate from labels so catalog.json consumers receive plain labels.
 CATEGORIES = [
     Category("data-statistics", "📊", "Data and Statistics", "INSEE, Eurostat, open data"),
+    Category("geospatial", "🗺️", "Geospatial and Territory", "Geography, addresses, cadastre, urban planning"),
     Category("legal-tech", "⚖️", "Legal Tech and Law", "Legislation, case law, privacy"),
-    Category("invoicing", "🧾", "Electronic Invoicing", "Electronic invoices and business billing"),
     Category("government-public-finance", "🏛️", "Government and Public Finance", "Government, parliament, tax, procurement"),
+    Category("public-services", "🧭", "Public Services", "Administrative procedures and public services"),
+    Category("employment", "💼", "Employment and Labor", "Jobs, occupations, recruitment, labor data"),
+    Category("transport", "🚆", "Transport and Mobility", "Rail, public transport, routes, disruptions"),
+    Category("invoicing", "🧾", "Electronic Invoicing", "Electronic invoices and business billing"),
     Category("cybersecurity-compliance", "🛡️", "Cybersecurity and Compliance", "Cybersecurity rules and regulatory compliance"),
-    Category("design-other", "🎨", "Design and Other Services", "Design systems, transport, weather, other services"),
+    Category("design-other", "🎨", "Design and Other Services", "Design systems, weather, other services"),
 ]
 
 # Abbreviations used in the catalog's "Lang" column.
