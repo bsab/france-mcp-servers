@@ -1,0 +1,74 @@
+{
+  "name": "sncf-mcp",
+  "repository_url": "https://github.com/krezzoid/sncf-mcp",
+  "site_url": "https://github.com/krezzoid/sncf-mcp/blob/d1494327a2a0be820ccf57016e6cd473ba256fb3/README.md",
+  "transport": "stdio",
+  "author": "krezzoid",
+  "language": "Go",
+  "license": "MIT",
+  "stars": 5,
+  "category": "transport",
+  "description": "Plan journeys and query stations, upcoming departures, and service disruptions through the official SNCF and Navitia open-data API.",
+  "tags": [
+    "sncf",
+    "navitia",
+    "transport",
+    "rail",
+    "journey-planning",
+    "open-data"
+  ],
+  "last_verified": "2026-09-07",
+  "quality": {
+    "rubric_version": 1,
+    "reviewed_at": "2026-09-07",
+    "status": "assessed",
+    "criteria": {
+      "installation": {
+        "status": "complete",
+        "evidence": [
+          "https://github.com/krezzoid/sncf-mcp/blob/d1494327a2a0be820ccf57016e6cd473ba256fb3/README.md#L94-L115"
+        ],
+        "notes": "The README provides complete build and stdio startup commands from source and an alternative Docker build-and-run sequence, including injection of the required API key."
+      },
+      "configuration": {
+        "status": "complete",
+        "evidence": [
+          "https://github.com/krezzoid/sncf-mcp/blob/d1494327a2a0be820ccf57016e6cd473ba256fb3/README.md#L94-L112",
+          "https://github.com/krezzoid/sncf-mcp/blob/d1494327a2a0be820ccf57016e6cd473ba256fb3/README.md#L132-L138"
+        ],
+        "notes": "The required Go 1.26+ runtime, free SNCF API key acquisition, SNCF_API_KEY environment variable, container alternative, and key-handling behavior are explicitly documented."
+      },
+      "tools": {
+        "status": "partial",
+        "evidence": [
+          "https://github.com/krezzoid/sncf-mcp/blob/d1494327a2a0be820ccf57016e6cd473ba256fb3/README.md#L14-L62"
+        ],
+        "notes": "The four tools are clearly described and two direct tool-call examples include concrete arguments and output, but no natural-language user prompt is supplied."
+      },
+      "compatibility": {
+        "status": "complete",
+        "evidence": [
+          "https://github.com/krezzoid/sncf-mcp/blob/d1494327a2a0be820ccf57016e6cd473ba256fb3/README.md#L94-L105",
+          "https://github.com/krezzoid/sncf-mcp/blob/d1494327a2a0be820ccf57016e6cd473ba256fb3/README.md#L117-L130"
+        ],
+        "notes": "The README explicitly identifies stdio and supplies a complete Claude Desktop configuration with the executable path and required environment variable."
+      },
+      "license": {
+        "status": "complete",
+        "evidence": [
+          "https://github.com/krezzoid/sncf-mcp/blob/d1494327a2a0be820ccf57016e6cd473ba256fb3/LICENSE#L1-L21",
+          "https://github.com/krezzoid/sncf-mcp/blob/d1494327a2a0be820ccf57016e6cd473ba256fb3/README.md#L153-L155"
+        ],
+        "notes": "The README declares MIT and links to complete MIT license terms applying to the server software."
+      },
+      "limitations": {
+        "status": "complete",
+        "evidence": [
+          "https://github.com/krezzoid/sncf-mcp/blob/d1494327a2a0be820ccf57016e6cd473ba256fb3/README.md#L140-L145",
+          "https://github.com/krezzoid/sncf-mcp/blob/d1494327a2a0be820ccf57016e6cd473ba256fb3/docs/adr/0002-no-price-scraping.md#L65-L69"
+        ],
+        "notes": "Ticket prices are unavailable because the open-data API has no fares and the server will not scrape them; the ADR explains the user impact and workaround. Coverage, timezone, and rate-limit behavior are also documented."
+      }
+    }
+  }
+}

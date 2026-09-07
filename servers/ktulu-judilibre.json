@@ -16,5 +16,58 @@
     "french-law",
     "piste"
   ],
-  "last_verified": "2026-09-06"
+  "last_verified": "2026-09-06",
+  "quality": {
+    "rubric_version": 1,
+    "reviewed_at": "2026-09-07",
+    "status": "assessed",
+    "criteria": {
+      "installation": {
+        "status": "complete",
+        "evidence": [
+          "https://github.com/Ktulu-Analog/mcp-judilibre/blob/6250bf2ae36e6349270997d9f8ad8ee1c281315b/README.md#L64-L82",
+          "https://github.com/Ktulu-Analog/mcp-judilibre/blob/6250bf2ae36e6349270997d9f8ad8ee1c281315b/README.md#L108-L141"
+        ],
+        "notes": "Complete local and Docker installation commands are followed by Python and Docker startup commands, command-line options, port mapping, and the resulting MCP endpoint."
+      },
+      "configuration": {
+        "status": "complete",
+        "evidence": [
+          "https://github.com/Ktulu-Analog/mcp-judilibre/blob/6250bf2ae36e6349270997d9f8ad8ee1c281315b/README.md#L25-L60",
+          "https://github.com/Ktulu-Analog/mcp-judilibre/blob/6250bf2ae36e6349270997d9f8ad8ee1c281315b/README.md#L86-L104",
+          "https://github.com/Ktulu-Analog/mcp-judilibre/blob/6250bf2ae36e6349270997d9f8ad8ee1c281315b/.env.example#L1-L4"
+        ],
+        "notes": "Python 3.11+, PISTE registration and subscription, sandbox selection, credential retrieval, and both required environment variables are explicitly documented and match the environment template."
+      },
+      "tools": {
+        "status": "partial",
+        "evidence": [
+          "https://github.com/Ktulu-Analog/mcp-judilibre/blob/6250bf2ae36e6349270997d9f8ad8ee1c281315b/README.md#L188-L234"
+        ],
+        "notes": "All eight tools and their behavior are described, with concrete direct-call examples for taxonomy and parameter examples for statistics and pagination, but there is no concrete natural-language MCP prompt."
+      },
+      "compatibility": {
+        "status": "complete",
+        "evidence": [
+          "https://github.com/Ktulu-Analog/mcp-judilibre/blob/6250bf2ae36e6349270997d9f8ad8ee1c281315b/README.md#L145-L184"
+        ],
+        "notes": "The documentation explicitly identifies MCP 2025-03-26 Streamable HTTP and provides complete Claude Desktop and Claude Code connection examples."
+      },
+      "license": {
+        "status": "complete",
+        "evidence": [
+          "https://github.com/Ktulu-Analog/mcp-judilibre/blob/6250bf2ae36e6349270997d9f8ad8ee1c281315b/README.md#L249-L255",
+          "https://github.com/Ktulu-Analog/mcp-judilibre/blob/6250bf2ae36e6349270997d9f8ad8ee1c281315b/LICENSE#L1-L30"
+        ],
+        "notes": "The README explicitly applies GNU AGPL v3.0 to the project and links to the commit-pinned LICENSE containing the full terms."
+      },
+      "limitations": {
+        "status": "partial",
+        "evidence": [
+          "https://github.com/Ktulu-Analog/mcp-judilibre/blob/6250bf2ae36e6349270997d9f8ad8ee1c281315b/README.md#L238-L255"
+        ],
+        "notes": "The only warning is the generic disclaimer that this is not an official project. No concrete operational impact, workaround, unsupported operation, data-coverage boundary, or rate limit is documented."
+      }
+    }
+  }
 }

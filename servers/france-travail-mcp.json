@@ -1,0 +1,77 @@
+{
+  "name": "France Travail MCP",
+  "repository_url": "https://github.com/JoJoLaBagarre/france-travail-mcp",
+  "site_url": "https://github.com/JoJoLaBagarre/france-travail-mcp/blob/5dcc963a92aef9cfcab156c8e597f8bce965c3ae/README.md",
+  "transport": "stdio",
+  "author": "JoJoLaBagarre",
+  "language": "TypeScript",
+  "license": "MIT",
+  "stars": 1,
+  "category": "employment",
+  "description": "Search official France Travail job listings, explore ROME occupations, predict ROME codes, and identify companies likely to recruit.",
+  "tags": [
+    "france-travail",
+    "employment",
+    "jobs",
+    "rome",
+    "job-search",
+    "official-apis"
+  ],
+  "last_verified": "2026-09-07",
+  "quality": {
+    "rubric_version": 1,
+    "reviewed_at": "2026-09-07",
+    "status": "assessed",
+    "criteria": {
+      "installation": {
+        "status": "complete",
+        "evidence": [
+          "https://github.com/JoJoLaBagarre/france-travail-mcp/blob/5dcc963a92aef9cfcab156c8e597f8bce965c3ae/README.md#L18-L51",
+          "https://github.com/JoJoLaBagarre/france-travail-mcp/blob/5dcc963a92aef9cfcab156c8e597f8bce965c3ae/INSTALL.md#L46-L78"
+        ],
+        "notes": "The documentation provides operational installation paths for the Claude Desktop bundle, a one-command Claude Code setup, and ready-to-paste client JSON containing the executable, arguments, and environment variables."
+      },
+      "configuration": {
+        "status": "complete",
+        "evidence": [
+          "https://github.com/JoJoLaBagarre/france-travail-mcp/blob/5dcc963a92aef9cfcab156c8e597f8bce965c3ae/README.md#L55-L62",
+          "https://github.com/JoJoLaBagarre/france-travail-mcp/blob/5dcc963a92aef9cfcab156c8e597f8bce965c3ae/README.md#L96-L106",
+          "https://github.com/JoJoLaBagarre/france-travail-mcp/blob/5dcc963a92aef9cfcab156c8e597f8bce965c3ae/server.json#L9-L40"
+        ],
+        "notes": "Node.js 18+, France Travail account and application setup, required OAuth client ID and secret, per-tool API subscriptions and scopes, and the optional La Bonne Boîte feature variable are documented."
+      },
+      "tools": {
+        "status": "complete",
+        "evidence": [
+          "https://github.com/JoJoLaBagarre/france-travail-mcp/blob/5dcc963a92aef9cfcab156c8e597f8bce965c3ae/README.md#L66-L90"
+        ],
+        "notes": "All eight tools are named and described, and the documentation gives a concrete natural-language job-search prompt followed by the tool-call sequence and representative arguments."
+      },
+      "compatibility": {
+        "status": "complete",
+        "evidence": [
+          "https://github.com/JoJoLaBagarre/france-travail-mcp/blob/5dcc963a92aef9cfcab156c8e597f8bce965c3ae/README.md#L35-L49",
+          "https://github.com/JoJoLaBagarre/france-travail-mcp/blob/5dcc963a92aef9cfcab156c8e597f8bce965c3ae/README.md#L120-L129",
+          "https://github.com/JoJoLaBagarre/france-travail-mcp/blob/5dcc963a92aef9cfcab156c8e597f8bce965c3ae/server.json#L9-L17"
+        ],
+        "notes": "The documentation explicitly identifies stdio and supplies a full MCP configuration for named clients including Claude Desktop, Cursor, and VS Code; the manifest independently declares stdio."
+      },
+      "license": {
+        "status": "complete",
+        "evidence": [
+          "https://github.com/JoJoLaBagarre/france-travail-mcp/blob/5dcc963a92aef9cfcab156c8e597f8bce965c3ae/LICENSE#L1-L21",
+          "https://github.com/JoJoLaBagarre/france-travail-mcp/blob/5dcc963a92aef9cfcab156c8e597f8bce965c3ae/README.md#L159-L163"
+        ],
+        "notes": "The README identifies the server as MIT-licensed and links to complete MIT license terms covering the software."
+      },
+      "limitations": {
+        "status": "complete",
+        "evidence": [
+          "https://github.com/JoJoLaBagarre/france-travail-mcp/blob/5dcc963a92aef9cfcab156c8e597f8bce965c3ae/README.md#L77-L81",
+          "https://github.com/JoJoLaBagarre/france-travail-mcp/blob/5dcc963a92aef9cfcab156c8e597f8bce965c3ae/README.md#L85-L92"
+        ],
+        "notes": "La Bonne Boîte requires manual authorization, otherwise returns 403, and is disabled by default with an enablement path. Rejected aggregate city codes and the arrondissement-code workaround are also documented."
+      }
+    }
+  }
+}

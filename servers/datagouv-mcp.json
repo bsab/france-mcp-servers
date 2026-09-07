@@ -17,5 +17,63 @@
     "public-apis",
     "france"
   ],
-  "last_verified": "2026-09-06"
+  "last_verified": "2026-09-06",
+  "quality": {
+    "rubric_version": 1,
+    "reviewed_at": "2026-09-07",
+    "status": "assessed",
+    "criteria": {
+      "installation": {
+        "status": "complete",
+        "evidence": [
+          "https://github.com/datagouv/datagouv-mcp/blob/c1e4e75d487ad3c4b3bb967ec0fd541eb28b32fe/README.md#L15-L25",
+          "https://github.com/datagouv/datagouv-mcp/blob/c1e4e75d487ad3c4b3bb967ec0fd541eb28b32fe/README.md#L68-L92",
+          "https://github.com/datagouv/datagouv-mcp/blob/c1e4e75d487ad3c4b3bb967ec0fd541eb28b32fe/README.md#L281-L349"
+        ],
+        "notes": "The hosted endpoint is immediately usable without access restrictions, and concrete connection commands and configurations are provided. Self-hosting also has complete clone, Docker Compose, uv dependency-installation, environment preparation, and startup commands."
+      },
+      "configuration": {
+        "status": "complete",
+        "evidence": [
+          "https://github.com/datagouv/datagouv-mcp/blob/c1e4e75d487ad3c4b3bb967ec0fd541eb28b32fe/README.md#L15-L23",
+          "https://github.com/datagouv/datagouv-mcp/blob/c1e4e75d487ad3c4b3bb967ec0fd541eb28b32fe/README.md#L292-L348",
+          "https://github.com/datagouv/datagouv-mcp/blob/c1e4e75d487ad3c4b3bb967ec0fd541eb28b32fe/.env.example#L1-L19"
+        ],
+        "notes": "The hosted service explicitly requires no access credentials. For self-hosting, Docker or uv is identified, all runtime variables and defaults are documented, and optional monitoring variables are included in the environment example."
+      },
+      "tools": {
+        "status": "complete",
+        "evidence": [
+          "https://github.com/datagouv/datagouv-mcp/blob/c1e4e75d487ad3c4b3bb967ec0fd541eb28b32fe/README.md#L11-L16",
+          "https://github.com/datagouv/datagouv-mcp/blob/c1e4e75d487ad3c4b3bb967ec0fd541eb28b32fe/README.md#L367-L425"
+        ],
+        "notes": "The README describes each dataset, organization, resource, dataservice, OpenAPI, and metrics tool with parameters and workflows, and supplies concrete conversational prompts for dataset discovery and analysis."
+      },
+      "compatibility": {
+        "status": "complete",
+        "evidence": [
+          "https://github.com/datagouv/datagouv-mcp/blob/c1e4e75d487ad3c4b3bb967ec0fd541eb28b32fe/README.md#L27-L47",
+          "https://github.com/datagouv/datagouv-mcp/blob/c1e4e75d487ad3c4b3bb967ec0fd541eb28b32fe/README.md#L68-L92",
+          "https://github.com/datagouv/datagouv-mcp/blob/c1e4e75d487ad3c4b3bb967ec0fd541eb28b32fe/README.md#L351-L365"
+        ],
+        "notes": "Streamable HTTP is explicitly identified as the only supported transport, and named-client examples include complete AnythingLLM, Claude Code, and Claude Desktop connection configurations."
+      },
+      "license": {
+        "status": "complete",
+        "evidence": [
+          "https://github.com/datagouv/datagouv-mcp/blob/c1e4e75d487ad3c4b3bb967ec0fd541eb28b32fe/README.md#L561-L563",
+          "https://github.com/datagouv/datagouv-mcp/blob/c1e4e75d487ad3c4b3bb967ec0fd541eb28b32fe/LICENSE#L1-L21"
+        ],
+        "notes": "The README explicitly applies the MIT License to the project and links to the commit-pinned LICENSE containing the complete terms."
+      },
+      "limitations": {
+        "status": "complete",
+        "evidence": [
+          "https://github.com/datagouv/datagouv-mcp/blob/c1e4e75d487ad3c4b3bb967ec0fd541eb28b32fe/README.md#L355-L365",
+          "https://github.com/datagouv/datagouv-mcp/blob/c1e4e75d487ad3c4b3bb967ec0fd541eb28b32fe/README.md#L395-L425"
+        ],
+        "notes": "The documentation states that stdio and SSE are unsupported and gives the Streamable HTTP alternative, documents Tabular API file-size limits and pagination guidance, and states that metrics work only against production."
+      }
+    }
+  }
 }

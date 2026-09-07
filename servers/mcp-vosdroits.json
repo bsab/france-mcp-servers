@@ -1,0 +1,76 @@
+{
+  "name": "VosDroits MCP",
+  "repository_url": "https://github.com/guigui42/mcp-vosdroits",
+  "site_url": "https://github.com/guigui42/mcp-vosdroits/blob/82098a08c5602bb961ce4ac4166c7c2c95a2245d/README.md",
+  "transport": "stdio",
+  "author": "guigui42",
+  "language": "Go",
+  "license": "MIT",
+  "stars": 105,
+  "category": "public-services",
+  "description": "Search and retrieve French administrative procedures and tax guidance published on service-public.gouv.fr and impots.gouv.fr.",
+  "tags": [
+    "public-services",
+    "administration",
+    "tax",
+    "service-public",
+    "impots",
+    "web-scraping"
+  ],
+  "last_verified": "2026-09-07",
+  "quality": {
+    "rubric_version": 1,
+    "reviewed_at": "2026-09-07",
+    "status": "assessed",
+    "criteria": {
+      "installation": {
+        "status": "complete",
+        "evidence": [
+          "https://github.com/guigui42/mcp-vosdroits/blob/82098a08c5602bb961ce4ac4166c7c2c95a2245d/README.md#L23-L50",
+          "https://github.com/guigui42/mcp-vosdroits/blob/82098a08c5602bb961ce4ac4166c7c2c95a2245d/README.md#L60-L94"
+        ],
+        "notes": "The README supplies executable download, permission, binary startup, Docker pull and run, and named-client installation steps, including complete Docker and local-binary configurations."
+      },
+      "configuration": {
+        "status": "partial",
+        "evidence": [
+          "https://github.com/guigui42/mcp-vosdroits/blob/82098a08c5602bb961ce4ac4166c7c2c95a2245d/README.md#L96-L116",
+          "https://github.com/guigui42/mcp-vosdroits/blob/82098a08c5602bb961ce4ac4166c7c2c95a2245d/docs/DEVELOPMENT.md#L5-L52"
+        ],
+        "notes": "Go and Docker prerequisites, transport selection, environment variables, and defaults are documented. The user documentation does not explicitly state whether credentials are unnecessary, so the rubric's credentials requirement is not fully met."
+      },
+      "tools": {
+        "status": "partial",
+        "evidence": [
+          "https://github.com/guigui42/mcp-vosdroits/blob/82098a08c5602bb961ce4ac4166c7c2c95a2245d/README.md#L258-L374",
+          "https://github.com/guigui42/mcp-vosdroits/blob/82098a08c5602bb961ce4ac4166c7c2c95a2245d/docs/quick-start.md#L150-L170"
+        ],
+        "notes": "All eight MCP tools have capability, input, and output descriptions, and the quick-start guide shows a concrete search_procedures tool call. No concrete end-user prompt demonstrating MCP use is documented."
+      },
+      "compatibility": {
+        "status": "complete",
+        "evidence": [
+          "https://github.com/guigui42/mcp-vosdroits/blob/82098a08c5602bb961ce4ac4166c7c2c95a2245d/docs/DEVELOPMENT.md#L24-L40",
+          "https://github.com/guigui42/mcp-vosdroits/blob/82098a08c5602bb961ce4ac4166c7c2c95a2245d/README.md#L52-L80"
+        ],
+        "notes": "The development guide explicitly identifies stdio as the default transport and documents optional HTTP transport, while the README provides a complete named VS Code and GitHub Copilot configuration."
+      },
+      "license": {
+        "status": "complete",
+        "evidence": [
+          "https://github.com/guigui42/mcp-vosdroits/blob/82098a08c5602bb961ce4ac4166c7c2c95a2245d/README.md#L388-L390",
+          "https://github.com/guigui42/mcp-vosdroits/blob/82098a08c5602bb961ce4ac4166c7c2c95a2245d/LICENSE#L1-L20"
+        ],
+        "notes": "The README identifies the MIT license and directs readers to an accessible repository license containing the applicable software terms."
+      },
+      "limitations": {
+        "status": "complete",
+        "evidence": [
+          "https://github.com/guigui42/mcp-vosdroits/blob/82098a08c5602bb961ce4ac4166c7c2c95a2245d/docs/SCRAPING.md#L150-L170",
+          "https://github.com/guigui42/mcp-vosdroits/blob/82098a08c5602bb961ce4ac4166c7c2c95a2245d/docs/SCRAPING.md#L193-L201"
+        ],
+        "notes": "The scraping documentation gives a concrete one-request-per-second limit and restricted domains, and explains that upstream HTML changes can break selectors and require selector updates."
+      }
+    }
+  }
+}

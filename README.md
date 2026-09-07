@@ -13,8 +13,8 @@
   <a href="https://github.com/bsab/france-mcp-servers/actions/workflows/link-check.yml"><img src="https://github.com/bsab/france-mcp-servers/actions/workflows/link-check.yml/badge.svg" alt="Link check"/></a>
   <a href="https://github.com/bsab/france-mcp-servers/actions/workflows/pages.yml"><img src="https://github.com/bsab/france-mcp-servers/actions/workflows/pages.yml/badge.svg" alt="GitHub Pages"/></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-green.svg" alt="MIT License"/></a>
-  <img src="https://img.shields.io/badge/MCP%20servers-5-blue.svg" alt="5 servers"/>
-  <img src="https://img.shields.io/badge/categories-2-orange.svg" alt="2 categories"/>
+  <img src="https://img.shields.io/badge/MCP%20servers-11-blue.svg" alt="11 servers"/>
+  <img src="https://img.shields.io/badge/categories-6-orange.svg" alt="6 categories"/>
 <!-- END:badges -->
 </p>
 
@@ -67,7 +67,7 @@ reliability. Where assessed, click the score for criteria, notes, sources and re
 name, with unassessed entries last. Bold names indicate an independent editorial selection.
 [Assessment method and limitations](#quality-and-transparency).
 
-Starter entries have been checked against public repositories and documentation;
+Catalog entries have been checked against public repositories and documentation;
 none has been assigned a Ready score. `last_verified` records that metadata check,
 not a runtime test. No third-party MCP server or tool was executed.
 
@@ -88,27 +88,68 @@ not a runtime test. No third-party MCP server or tool was executed.
   <tbody>
   <tr>
     <td><a href="https://github.com/datagouv/datagouv-mcp">data.gouv.fr MCP</a></td>
-    <td align="right">Unassessed</td>
+    <td align="right"><a href="servers/datagouv-mcp.json" title="Documentation review: 2026-09-07; criteria and sources">100/100</a></td>
     <td align="right">1589</td>
     <td>Python</td>
     <td>Official data.gouv.fr MCP server for discovering French datasets, querying tabular resources, and exploring public API metadata.</td>
     <td align="center"><a href="https://mcp.data.gouv.fr/mcp" target="_blank" rel="noopener noreferrer" title="Open MCP endpoint: data.gouv.fr MCP"><kbd>Connect</kbd></a></td>
   </tr>
   <tr>
+    <td><a href="https://github.com/cturkieh/france-data-mcp">france-data-mcp</a></td>
+    <td align="right"><a href="servers/france-data-mcp.json" title="Documentation review: 2026-09-07; criteria and sources">100/100</a></td>
+    <td align="right">3</td>
+    <td>TS</td>
+    <td>Cross-reference 13 French public datasets covering healthcare, demographics, businesses, geography, planning, and real estate.</td>
+    <td align="center"><a href="https://france-data-mcp.vercel.app/mcp" target="_blank" rel="noopener noreferrer" title="Open MCP endpoint: france-data-mcp"><kbd>Connect</kbd></a></td>
+  </tr>
+  <tr>
     <td><a href="https://github.com/DavidScanu/mcp-insee-entreprises">INSEE Entreprises MCP</a></td>
-    <td align="right">Unassessed</td>
+    <td align="right"><a href="servers/insee-entreprises.json" title="Documentation review: 2026-09-07; criteria and sources">100/100</a></td>
     <td align="right">1</td>
     <td>Python</td>
     <td>Look up French businesses by SIREN or SIRET and search by location or activity using INSEE Sirene and the public business-search API.</td>
     <td align="center">—</td>
   </tr>
   <tr>
+    <td><a href="https://github.com/InseeFrLab/McpDiffusion">McpDiffusion</a></td>
+    <td align="right"><a href="servers/mcpdiffusion.json" title="Documentation review: 2026-09-07; criteria and sources">75/100</a></td>
+    <td align="right">1</td>
+    <td>Python</td>
+    <td>Beta server unifying INSEE publications, MELODI datasets, and RMES semantic metadata behind a remote MCP endpoint.</td>
+    <td align="center"><a href="https://mcpdiffusion.lab.sspcloud.fr/mcp" target="_blank" rel="noopener noreferrer" title="Open MCP endpoint: McpDiffusion"><kbd>Connect</kbd></a></td>
+  </tr>
+  <tr>
     <td><a href="https://github.com/thomas-servais/mcp-recherche-entreprise">Recherche d&#x27;Entreprises MCP</a></td>
-    <td align="right">Unassessed</td>
+    <td align="right"><a href="servers/recherche-entreprise.json" title="Documentation review: 2026-09-07; criteria and sources">57.5/100</a></td>
     <td align="right">1</td>
     <td>TS</td>
     <td>Search French companies and associations by name, location, activity, and certification using the government&#x27;s public business-search API.</td>
     <td align="center">—</td>
+  </tr>
+  </tbody>
+</table>
+
+### 🗺️ Geospatial and Territory
+
+<table width="100%">
+  <thead>
+    <tr>
+      <th width="23%">Project</th>
+      <th width="13%" align="right">🎯 Ready score /100</th>
+      <th width="6%" align="right">⭐</th>
+      <th width="8%">Lang</th>
+      <th width="40%">Description</th>
+      <th width="10%">Link</th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td><a href="https://github.com/ignfab/geocontext">Geocontext</a></td>
+    <td align="right"><a href="servers/geocontext.json" title="Documentation review: 2026-09-07; criteria and sources">100/100</a></td>
+    <td align="right">26</td>
+    <td>TS</td>
+    <td>IGNfab prototype for querying authoritative French geospatial data, including geocoding, elevation, cadastre, and urban planning.</td>
+    <td align="center"><a href="https://geollm.beta.ign.fr/geocontext/mcp" target="_blank" rel="noopener noreferrer" title="Open MCP endpoint: Geocontext"><kbd>Connect</kbd></a></td>
   </tr>
   </tbody>
 </table>
@@ -128,31 +169,107 @@ not a runtime test. No third-party MCP server or tool was executed.
   </thead>
   <tbody>
   <tr>
+    <td><a href="https://github.com/Ktulu-Analog/mcp-legifrance">Légifrance MCP</a></td>
+    <td align="right"><a href="servers/ktulu-legifrance.json" title="Documentation review: 2026-09-07; criteria and sources">90/100</a></td>
+    <td align="right">3</td>
+    <td>Python</td>
+    <td>Community MCP server for French legislation, legal codes, the Official Journal, collective agreements, and case law through Légifrance.</td>
+    <td align="center">—</td>
+  </tr>
+  <tr>
     <td><a href="https://github.com/Ktulu-Analog/mcp-judilibre">Judilibre MCP</a></td>
-    <td align="right">Unassessed</td>
+    <td align="right"><a href="servers/ktulu-judilibre.json" title="Documentation review: 2026-09-07; criteria and sources">87.5/100</a></td>
     <td align="right">2</td>
     <td>Python</td>
     <td>Community MCP server for searching, reading, and exporting French court decisions from the Cour de cassation&#x27;s Judilibre API.</td>
     <td align="center">—</td>
   </tr>
+  </tbody>
+</table>
+
+### 🧭 Public Services
+
+<table width="100%">
+  <thead>
+    <tr>
+      <th width="23%">Project</th>
+      <th width="13%" align="right">🎯 Ready score /100</th>
+      <th width="6%" align="right">⭐</th>
+      <th width="8%">Lang</th>
+      <th width="40%">Description</th>
+      <th width="10%">Link</th>
+    </tr>
+  </thead>
+  <tbody>
   <tr>
-    <td><a href="https://github.com/Ktulu-Analog/mcp-legifrance">Légifrance MCP</a></td>
-    <td align="right">Unassessed</td>
-    <td align="right">3</td>
-    <td>Python</td>
-    <td>Community MCP server for French legislation, legal codes, the Official Journal, collective agreements, and case law through Légifrance.</td>
+    <td><a href="https://github.com/guigui42/mcp-vosdroits">VosDroits MCP</a></td>
+    <td align="right"><a href="servers/mcp-vosdroits.json" title="Documentation review: 2026-09-07; criteria and sources">80/100</a></td>
+    <td align="right">105</td>
+    <td>Go</td>
+    <td>Search and retrieve French administrative procedures and tax guidance published on service-public.gouv.fr and impots.gouv.fr.</td>
+    <td align="center">—</td>
+  </tr>
+  </tbody>
+</table>
+
+### 💼 Employment and Labor
+
+<table width="100%">
+  <thead>
+    <tr>
+      <th width="23%">Project</th>
+      <th width="13%" align="right">🎯 Ready score /100</th>
+      <th width="6%" align="right">⭐</th>
+      <th width="8%">Lang</th>
+      <th width="40%">Description</th>
+      <th width="10%">Link</th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td><a href="https://github.com/JoJoLaBagarre/france-travail-mcp">France Travail MCP</a></td>
+    <td align="right"><a href="servers/france-travail-mcp.json" title="Documentation review: 2026-09-07; criteria and sources">100/100</a></td>
+    <td align="right">1</td>
+    <td>TS</td>
+    <td>Search official France Travail job listings, explore ROME occupations, predict ROME codes, and identify companies likely to recruit.</td>
+    <td align="center">—</td>
+  </tr>
+  </tbody>
+</table>
+
+### 🚆 Transport and Mobility
+
+<table width="100%">
+  <thead>
+    <tr>
+      <th width="23%">Project</th>
+      <th width="13%" align="right">🎯 Ready score /100</th>
+      <th width="6%" align="right">⭐</th>
+      <th width="8%">Lang</th>
+      <th width="40%">Description</th>
+      <th width="10%">Link</th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td><a href="https://github.com/krezzoid/sncf-mcp">sncf-mcp</a></td>
+    <td align="right"><a href="servers/sncf-mcp.json" title="Documentation review: 2026-09-07; criteria and sources">90/100</a></td>
+    <td align="right">5</td>
+    <td>Go</td>
+    <td>Plan journeys and query stations, upcoming departures, and service disruptions through the official SNCF and Navitia open-data API.</td>
     <td align="center">—</td>
   </tr>
   </tbody>
 </table>
 <!-- END:catalog -->
 
-### Starter verification notes
+### Verification notes
 
-The initial five listings were checked on **2026-09-06**. Each metadata file links
-its consulted README at a fixed commit. Licenses reflect upstream declarations;
-star counts are GitHub snapshots, not recommendations. Installation requirements
-below come from documentation and source inspection, not execution:
+The initial five listings were checked on **2026-09-06** and the six additions on
+**2026-09-07**. Each metadata file links its consulted README at a fixed commit.
+Licenses reflect upstream declarations; star counts are GitHub snapshots, not
+recommendations. Installation requirements below come from documentation and source
+inspection, not execution:
 
 | Project | Setup and important qualifications |
 |---------|------------------------------------|
@@ -161,6 +278,12 @@ below come from documentation and source inspection, not execution:
 | [Judilibre MCP](servers/ktulu-judilibre.json) | Community Python server, self-hosted over Streamable HTTP. Requires a PISTE Judilibre subscription and `JUDILIBRE_CLIENT_ID` / `JUDILIBRE_CLIENT_SECRET`. No public hosting is claimed. |
 | [INSEE Entreprises MCP](servers/insee-entreprises.json) | Source installation with Python 3.12+ and `uv`; stdio. `INSEE_API_KEY` is needed for SIREN/SIRET lookups, but not advanced business search. MIT is declared by a README badge; no standalone license text was found. The source targets Sirene 3.11; current API compatibility is not verified. |
 | [Recherche d'Entreprises MCP](servers/recherche-entreprise.json) | Source installation with Node.js 18+, `npm install` and `npm run build`; stdio. Its public business-search requests do not use credentials. ISC is declared in package metadata. The README contains a placeholder clone URL: use the canonical repository link. |
+| [McpDiffusion](servers/mcpdiffusion.json) | Beta project, not an official supported INSEE product. A public HTTP endpoint is documented; most self-hosted tools require a private Elasticsearch index, while only the RMES SPARQL tool works without it. |
+| [Geocontext](servers/geocontext.json) | IGNfab incubation prototype with remote HTTP and local stdio options. The project explicitly states that it is not yet an industrialized IGN product. |
+| [VosDroits MCP](servers/mcp-vosdroits.json) | Community Go server distributed as binaries and a Docker image over stdio. It retrieves official Service-Public and tax content through web scraping rather than official APIs. |
+| [france-data-mcp](servers/france-data-mcp.json) | Offers a hosted Streamable HTTP endpoint and an npm stdio wrapper for 13 public sources and 36 tools. The public endpoint documents a per-IP rate limit. |
+| [France Travail MCP](servers/france-travail-mcp.json) | Local stdio server requiring free France Travail application credentials and subscriptions to the APIs used. La Bonne Boîte needs separate approval and is disabled by default. |
+| [sncf-mcp](servers/sncf-mcp.json) | Local Go server using stdio by default and requiring a free SNCF/Navitia API key. It covers journey planning and operational information, not ticket prices. |
 
 The two PISTE servers mention sandbox setup in their READMEs but use production
 API URLs in source; sandbox compatibility is not verified. Recherche d'Entreprises
