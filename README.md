@@ -326,7 +326,27 @@ The initial five listings were checked on **2026-09-06** and the six additions o
 **2026-09-07**. Each metadata file links its consulted README at a fixed commit.
 Licenses reflect upstream declarations; star counts are GitHub snapshots, not
 recommendations. Installation requirements below come from documentation and source
-inspection, not execution:
+inspection, not execution.
+
+### Runtime smoke tests
+
+Community reports are point-in-time observations, not endorsements, certifications or
+uptime guarantees. On **2026-09-08**, [xhmq3131 reported](https://github.com/bsab/france-mcp-servers/issues/10#issuecomment-5581671607)
+that data.gouv.fr MCP worked without authentication using mcporter 0.13.7 on Windows 11
+(build 22631) over Streamable HTTP. The endpoint initialized, exposed its tool schemas
+and returned three results from `search_datasets` for `emploi`. A direct MCP protocol
+check independently confirmed those endpoint behaviors on the same date.
+
+To reproduce the reported smoke test (requires Node.js 24 or newer):
+
+```bash
+npx --yes mcporter@0.13.7 list https://mcp.data.gouv.fr/mcp --schema
+npx --yes mcporter@0.13.7 call https://mcp.data.gouv.fr/mcp.search_datasets \
+  query=emploi page_size=3 --output json
+```
+
+Results may change as the catalog data and hosted service evolve. No API key is
+required for these commands.
 
 | Project | Setup and important qualifications |
 |---------|------------------------------------|
