@@ -1,0 +1,27 @@
+{
+  "name": "Pillr",
+  "site_url": "https://pillr.fr/mcp",
+  "mcp_endpoint": "https://pillr.fr/api/mcp",
+  "transport": "streamable-http",
+  "author": "Pillr",
+  "language": "TypeScript",
+  "license": null,
+  "stars": 0,
+  "category": "data-statistics",
+  "description": "French property data: price per m² by municipality, local market summary and planning permit requirements. Free, read-only, no account or authentication, 60 calls per hour.",
+  "short_description": "French property data: price per m² by municipality, local market summary and planning permit requirements.",
+  "tags": [
+    "real-estate",
+    "property-prices",
+    "dvf",
+    "housing-market",
+    "urban-planning",
+    "building-permits"
+  ],
+  "tools": [
+    "prix_m2_commune",
+    "marche_commune",
+    "demarche_urbanisme_projet"
+  ],
+  "last_verified": "2026-09-23"
+}
