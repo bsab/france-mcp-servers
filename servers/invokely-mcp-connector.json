@@ -1,0 +1,33 @@
+{
+  "name": "Invokely MCP connector",
+  "repository_url": "https://github.com/estevecastells/invokely-mcp-connector",
+  "site_url": "https://github.com/estevecastells/invokely-mcp-connector/blob/e47249a2ffc12edf0e79a25cbf15370f47cdedf9/README.md",
+  "transport": "stdio",
+  "author": "estevecastells",
+  "language": "JavaScript",
+  "license": "MIT",
+  "stars": 0,
+  "category": "data-statistics",
+  "description": "MIT-licensed local stdio adapter forwarding MCP calls to Invokely's hosted service for official statistics on France and the EU; hosted backend source is not included.",
+  "tags": [
+    "european-union",
+    "eurostat",
+    "france",
+    "official-statistics",
+    "stdio",
+    "world-bank"
+  ],
+  "tools": [
+    "search_indicators",
+    "resolve_place",
+    "get_value",
+    "get_series",
+    "compare",
+    "rank_places",
+    "workspace_list",
+    "workspace_get",
+    "workspace_save",
+    "workspace_delete"
+  ],
+  "last_verified": "2026-10-12"
+}
