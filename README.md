@@ -13,8 +13,8 @@
   <a href="https://github.com/bsab/france-mcp-servers/actions/workflows/link-check.yml"><img src="https://github.com/bsab/france-mcp-servers/actions/workflows/link-check.yml/badge.svg" alt="Link check"/></a>
   <a href="https://github.com/bsab/france-mcp-servers/actions/workflows/pages.yml"><img src="https://github.com/bsab/france-mcp-servers/actions/workflows/pages.yml/badge.svg" alt="GitHub Pages"/></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-green.svg" alt="MIT License"/></a>
-  <img src="https://img.shields.io/badge/MCP%20servers-16-blue.svg" alt="16 servers"/>
-  <img src="https://img.shields.io/badge/categories-7-orange.svg" alt="7 categories"/>
+  <img src="https://img.shields.io/badge/MCP%20servers-17-blue.svg" alt="17 servers"/>
+  <img src="https://img.shields.io/badge/categories-8-orange.svg" alt="8 categories"/>
 <!-- END:badges -->
 </p>
 
@@ -314,6 +314,31 @@ not a runtime test. No third-party MCP server or tool was executed.
     <td align="right">5</td>
     <td>Go</td>
     <td>Plan journeys and query stations, upcoming departures, and service disruptions through the official SNCF and Navitia open-data API.</td>
+    <td align="center">—</td>
+  </tr>
+  </tbody>
+</table>
+
+### 🎨 Design and Other Services
+
+<table width="100%">
+  <thead>
+    <tr>
+      <th width="23%">Project</th>
+      <th width="13%" align="right">🎯 Ready score /100</th>
+      <th width="6%" align="right">⭐</th>
+      <th width="8%">Lang</th>
+      <th width="40%">Description</th>
+      <th width="10%">Link</th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td><a href="https://github.com/edouard-claude/helloasso-mcp">helloasso-mcp</a></td>
+    <td align="right">Unassessed</td>
+    <td align="right">0</td>
+    <td>Rust</td>
+    <td>HelloAsso for French associations: members, tickets, donations, payments, refunds</td>
     <td align="center">—</td>
   </tr>
   </tbody>
