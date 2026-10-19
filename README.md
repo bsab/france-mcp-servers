@@ -13,7 +13,7 @@
   <a href="https://github.com/bsab/france-mcp-servers/actions/workflows/link-check.yml"><img src="https://github.com/bsab/france-mcp-servers/actions/workflows/link-check.yml/badge.svg" alt="Link check"/></a>
   <a href="https://github.com/bsab/france-mcp-servers/actions/workflows/pages.yml"><img src="https://github.com/bsab/france-mcp-servers/actions/workflows/pages.yml/badge.svg" alt="GitHub Pages"/></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-green.svg" alt="MIT License"/></a>
-  <img src="https://img.shields.io/badge/MCP%20servers-16-blue.svg" alt="16 servers"/>
+  <img src="https://img.shields.io/badge/MCP%20servers-17-blue.svg" alt="17 servers"/>
   <img src="https://img.shields.io/badge/categories-7-orange.svg" alt="7 categories"/>
 <!-- END:badges -->
 </p>
@@ -264,6 +264,14 @@ not a runtime test. No third-party MCP server or tool was executed.
     <td align="right">105</td>
     <td>Go</td>
     <td>Search and retrieve French administrative procedures and tax guidance published on service-public.gouv.fr and impots.gouv.fr.</td>
+    <td align="center">—</td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/edouard-claude/ent1-mcp">ent1-mcp</a></td>
+    <td align="right">Unassessed</td>
+    <td align="right">1</td>
+    <td>Rust</td>
+    <td>Parent access to the ENT ONE school platform: messaging, liaison book, homework</td>
     <td align="center">—</td>
   </tr>
   </tbody>
